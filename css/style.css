@@ -1,0 +1,68 @@
+﻿body,html{
+    /* margin:0;
+	padding:0;
+	width: 100%;
+	height:100%; */
+    background:#ebebeb;
+}
+
+/* header start css
+=========================== */
+header{
+	width:100%;
+	height: auto;
+	overflow: hidden;
+	padding: 30px 0;
+}	
+	
+.header-container{ position: relative; }
+
+.fa-map-marker{
+	position: absolute;
+	top:12px;
+	left:10px;
+}
+
+.name_of_street,.search{ font:24px 'OpenSansLight'; } 
+
+header form,.col-name_of_street{
+	width:99%; 
+	margin:0 auto;
+}
+
+.name_of_street{
+	padding-left:30px;
+	box-sizing: border-box;
+	width:100%;
+}
+
+.col-name_of_street{ position: relative;}
+
+.name_of_street:focus{ outline: none;}
+
+.effect-8 ~ .focus-border:before,
+.effect-8 ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.3s;}
+.effect-8 ~ .focus-border:after{top: auto; bottom: 0; left: auto; right: 0;}
+.effect-8 ~ .focus-border i:before,
+.effect-8 ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #3399FF; transition: 0.4s;}
+.effect-8 ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0;}
+.effect-8:focus ~ .focus-border:before,
+.effect-8:focus ~ .focus-border:after{width: 100%; transition: 0.3s;}
+.effect-8:focus ~ .focus-border i:before,
+.effect-8:focus ~ .focus-border i:after{height: 100%; transition: 0.4s;}
+
+.search{
+	width:100%;
+	clear: both;
+	border: none;
+	text-align:center;
+	background:#0000CD;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+	padding:10px 0;
+	color:white;
+	margin:10px auto 0 auto;
+}
+/* header end css
+=========================== */
