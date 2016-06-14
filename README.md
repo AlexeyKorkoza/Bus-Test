@@ -1,4 +1,4 @@
-<h1><b>Page-proofs client</b></h1>
+<h1><b>Plain-destination</b></h1>
 <h2>Structure</h2>
 | filename  | Content a file |
 | ------------- | ------------- |
