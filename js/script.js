@@ -4,7 +4,9 @@ $(document).ready(function () {
         animationClick(this, 'tada');
     });
     document.getElementById('fromBlock').classList.add('animated','bounceInLeft');
-    document.getElementById('fromBlock').style.display = 'none'
+    document.getElementById('fromBlock').style.display = 'none';
+
+    geoFindMe();
 });
 
 function animationClick(element, animation) {
@@ -49,3 +51,6 @@ function geoFindMe() {
     navigator.geolocation.getCurrentPosition(success, error);
 }
 
+function searchRoutes(){
+    
+}
