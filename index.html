@@ -27,26 +27,39 @@
 <body>
 <header>
     <div class="header-container">
-        <div id="fromBlock" class="col-name_of_street">
-            <i class="fa fa-map-marker fa-lg"></i>
-            <input type="text" placeholder="Откуда?" class="name_of_street effect-8"/>
-					<span class="focus-border">
-						<i></i>
-					</span>
-        </div>
 
-        <div class="col-name_of_street">
-            <i class="fa fa-map-marker fa-lg"></i>
-            <input id="toBlock" type="text" placeholder="Куда?" class="name_of_street effect-8"/>
+            <div id="fromBlock" class="col-name_of_street">
+                <i class="fa fa-map-marker fa-lg"></i>
+                <input id="from" type="text"
+                       onkeypress="checkValues()"
+                       placeholder="Откуда?"
+                       class="name_of_street effect-8"/>
+            <span class="focus-border">
+                <i></i>
+            </span>
+            </div>
+
+            <div id="toBlock" class="col-name_of_street">
+                <i class="fa fa-map-marker fa-lg"></i>
+                <input id="to" type="text"
+                       onkeypress="checkValues()"
+                       placeholder="Куда?"
+                       class="name_of_street effect-8"/>
           <span class="focus-border">
             <i></i>
           </span>
 
-        </div>
-        <form onsubmit="searchRoutes()">
-            <button type="sumbit" class="search">Поиск маршрута</button>
-        </form>
+            </div>
+
+            <button type="button"
+                    id="submitButton"
+                    onclick="searchRoutes()"
+                    disabled
+                    class="search">Поиск маршрута
+            </button>
+
     </div>
+
 </header>
 
 <div id="out"></div>
