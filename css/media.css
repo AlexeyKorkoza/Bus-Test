@@ -1,39 +1,81 @@
 ﻿@media (min-width: 981px){ 
 	.header-container{
 	 margin: 0 auto;
-	width:940px;
+	 width:940px;
 	}
-	
-	.col-name_of_street{
-	  margin:0 0 0 5px;
-	  float:left;
-	  width:49%; 
-	  float:left;
+
+	.hamburger{ display: none;}
+
+	.navigation{
+		display: block;
+		padding-bottom: 0;
+		width:98.4%;
+		margin: 0 auto;
 	}
-    
+
+	.navigation li{
+		display: inline-block;
+		border-bottom: 0;
+		padding: 15px 10px;
+	}
+
+	.navigation li:nth-of-type(2){
+		border-left:1px solid white;
+		border-right:1px solid white;
+	}
+
+	.navigation li:last-of-type{ margin-left: -4px}
+
+	.col_name_of_street {
+		margin:10px 0 0 5px;
+		float:left;
+		width:49%;
+		float:left;
+	}
+
 	.name_of_street{ padding: 5px 0 5px 30px; }
-  
-	.search{ 
-    margin: 0 0 0 5px;
-	padding: 7px 0;
-	width: 49%;
+
+	.search{
+		margin: 10px 0 0 5px;
+		padding: 7px 0;
+		width: 49%;
 	}
-	
+
 	.fa-map-marker{ top: 15px;}
 }  
 
-@media (min-width: 768px) and (max-width: 980px) { 
-	.col-name_of_street{ 
-	  margin:0 0 0 5px;
+@media (min-width: 768px) and (max-width: 980px) {
+	.hamburger{ display: none; }
+
+	.navigation{
+		display: block;
+		padding-bottom: 0;
+	}
+
+	.navigation li{
+		display: inline-block;
+		border-bottom: 0;
+		padding: 15px 10px;
+	}
+
+	.navigation li:nth-of-type(2){
+		border-left:1px solid white;
+		border-right:1px solid white;
+	}
+
+	.navigation li:last-of-type{ margin-left: -4px}
+
+	.col_name_of_street {
+	  margin:10px 0 0 5px;
 	  float:left;
 	  width:49%; 
 	  float:left;
 	}
-    
+
 	.name_of_street{ padding: 5px 0 5px 30px; }
   
 	.search{ 
-    margin: 0 0 0 5px;
+    margin: 10px 0 0 5px;
     padding: 7px 0;
 	width: 49%;
 	}

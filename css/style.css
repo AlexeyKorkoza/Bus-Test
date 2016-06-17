@@ -6,6 +6,71 @@
     background:#ebebeb;
 }
 
+/* -----------------------------------------------------------------------------
+  HAMBURGER ICON COMPONENT
+----------------------------------------------------------------------------- */
+
+.c-hamburger {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: 96px;
+	height: 96px;
+	font-size: 0;
+	text-indent: -9999px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	box-shadow: none;
+	border: none;
+	cursor: pointer;
+	-webkit-transition: background 0.3s;
+	transition: background 0.3s;
+}
+
+.c-hamburger:focus { outline: none; }
+
+.c-hamburger span {
+	display: block;
+	position: absolute;
+	top: 44px;
+	left: 18px;
+	right: 18px;
+	height: 8px;
+	background: white;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+	position: absolute;
+	display: block;
+	left: 0;
+	width: 60px;
+	height: 8px;
+	background: #fff;
+	content: "";
+}
+
+.c-hamburger span::before { top: -20px; }
+
+.c-hamburger span::after { bottom: -20px; }
+
+.c-hamburger--rot { background: #28aadc; }
+
+.c-hamburger--rot span {
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.c-hamburger--rot.is-active { background: #28aadc; }
+
+.c-hamburger--rot.is-active span {
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
 /* header start css
 =========================== */
 header{
@@ -17,19 +82,47 @@ header{
 	
 .header-container{ position: relative; }
 
+.hamburger{
+	width: 100%;
+	background: #28aadc;
+}
+
+.navigation{
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	background: #28aadc;
+	display: none;
+}
+
+.navigation li{
+	list-style-type: none;
+	border-bottom: 1px solid white;
+	padding-bottom: 5px;
+}
+
+.navigation li:nth-of-type(2),.navigation li:last-of-type{ background: red;}
+
+.navigation li a{
+	text-decoration: none;
+	color:white;
+	margin-left: 15px;
+}
+
 .fa-map-marker{
 	position: absolute;
 	top:12px;
 	left:10px;
 }
 
-.name_of_street,.search{ font:24px 'OpenSansLight'; } 
+.name_of_street,.search,.navigation li a{ font:24px 'OpenSansLight'; }
 
-.col-name_of_street{
+.col_name_of_street {
 	width:99%; 
 	margin:0 auto;
 	position: relative;
 }
+
+#fromBlock{ margin-top: 10px; }
 
 .name_of_street{
 	padding-left:30px;
@@ -73,5 +166,5 @@ header{
 
 .search:hover{ background: #555555; }
 
-/* header end css
+/*
 =========================== */
