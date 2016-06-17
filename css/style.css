@@ -1,8 +1,8 @@
 ﻿body,html{
-    /* margin:0;
+    margin:0;
 	padding:0;
 	width: 100%;
-	height:100%; */
+	height:100%; 
     background:#ebebeb;
 }
 
@@ -25,18 +25,19 @@ header{
 
 .name_of_street,.search{ font:24px 'OpenSansLight'; } 
 
-header form,.col-name_of_street{
+.col-name_of_street{
 	width:99%; 
 	margin:0 auto;
+	position: relative;
 }
 
 .name_of_street{
 	padding-left:30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width:100%;
 }
-
-.col-name_of_street{ position: relative;}
 
 .name_of_street:focus{ outline: none;}
 
@@ -60,9 +61,17 @@ header form,.col-name_of_street{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius:5px;
-	padding:10px 0;
+	padding:11px 0;
 	color:white;
 	margin:10px auto 0 auto;
+	cursor: pointer;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
+
+.search:hover{ background: #555555; }
+
 /* header end css
 =========================== */

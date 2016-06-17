@@ -22,8 +22,20 @@ function onSuccessCallback(position) {
 
 function onErrorCallback() {
   output.innerHTML = errors[onErrorCallback.code];
-  el.style.display = 'block';
+  resizeSubmitButton();
   fromFlag = true;
+}
+
+function resizeSubmitButton(){
+  el.style.display = 'block';
+  var width = window.innerWidth;
+  if(width < 768){
+  el.style.marginBottom = "10px";
+  }
+  if(width >= 768){
+  document.getElementById('submitButton').style.marginTop = "10px";
+  document.getElementById('submitButton').style.width = "98.5%";
+  }
 }
 
 function geoFindMe() {
@@ -40,7 +52,9 @@ function geoFindMe() {
 $(document).ready(() => {
   document.getElementById('fromBlock').classList.add('animated', 'bounceInLeft');
   document.getElementById('fromBlock').style.display = 'none';
-
+  
+  // document.getElementById('fromBlock').style.display = 'none';
+  
   geoFindMe();
   output.innerHTML = '<p>Locating…</p>';
 });
