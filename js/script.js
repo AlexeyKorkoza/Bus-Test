@@ -45,16 +45,13 @@ function geoFindMe() {
     output.innerHTML = '<p>Geolocation is not supported by your browser</p>';
   } else {
     navigator.geolocation.getCurrentPosition(onSuccessCallback, onErrorCallback,
-    { enableHighAccuracy: true, timeout: timeoutVal });
+    { enableHighAccuracy: false, timeout: timeoutVal });
   }
 }
 
 $(document).ready(() => {
   document.getElementById('fromBlock').classList.add('animated', 'bounceInLeft');
   document.getElementById('fromBlock').style.display = 'none';
-  
-  // document.getElementById('fromBlock').style.display = 'none';
-  
   geoFindMe();
   output.innerHTML = '<p>Locating…</p>';
 });

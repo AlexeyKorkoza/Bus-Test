@@ -2,112 +2,43 @@
     margin:0;
 	padding:0;
 	width: 100%;
-	height:100%; 
+	height:100%;
     background:#ebebeb;
 }
 
-/* -----------------------------------------------------------------------------
-  HAMBURGER ICON COMPONENT
------------------------------------------------------------------------------ */
+body{ overflow: hidden; }
 
-.c-hamburger {
-	display: block;
-	position: relative;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	width: 96px;
-	height: 96px;
-	font-size: 0;
-	text-indent: -9999px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	box-shadow: none;
-	border: none;
-	cursor: pointer;
-	-webkit-transition: background 0.3s;
-	transition: background 0.3s;
-}
-
-.c-hamburger:focus { outline: none; }
-
-.c-hamburger span {
-	display: block;
-	position: absolute;
-	top: 44px;
-	left: 18px;
-	right: 18px;
-	height: 8px;
-	background: white;
-}
-
-.c-hamburger span::before,
-.c-hamburger span::after {
-	position: absolute;
-	display: block;
-	left: 0;
-	width: 60px;
-	height: 8px;
-	background: #fff;
-	content: "";
-}
-
-.c-hamburger span::before { top: -20px; }
-
-.c-hamburger span::after { bottom: -20px; }
-
-.c-hamburger--rot { background: #28aadc; }
-
-.c-hamburger--rot span {
-	-webkit-transition: -webkit-transform 0.3s;
-	transition: transform 0.3s;
-}
-
-.c-hamburger--rot.is-active { background: #28aadc; }
-
-.c-hamburger--rot.is-active span {
-	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-
-/* header start css
-=========================== */
-header{
-	width:100%;
-	height: auto;
-	overflow: hidden;
-	padding: 30px 0;
-}	
-	
-.header-container{ position: relative; }
-
-.hamburger{
+#form,#out,#map{
+	-webkit-transform: translateZ( 0 );
+	transform: translateZ( 0 );
+	-webkit-transition: -webkit-transform 0.6s ease-in-out;
+	transition: transform 0.6s ease-in-out;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	width: 100%;
-	background: #28aadc;
+	height: 100vh;
 }
 
-.navigation{
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	background: #28aadc;
-	display: none;
+.panel{
+	height: 98%;
+	min-width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
-.navigation li{
-	list-style-type: none;
-	border-bottom: 1px solid white;
-	padding-bottom: 5px;
+/* anchors start css
+=========================== */
+.top,.bottom{
+	position: relative;
+	left:50%;
 }
 
-.navigation li:nth-of-type(2),.navigation li:last-of-type{ background: red;}
+.bottom{ top:95%; }
 
-.navigation li a{
-	text-decoration: none;
-	color:white;
-	margin-left: 15px;
-}
-
+/* form start css
+=========================== */
+#form{ padding-top:5%;  }
+	
 .fa-map-marker{
 	position: absolute;
 	top:12px;
@@ -166,5 +97,28 @@ header{
 
 .search:hover{ background: #555555; }
 
-/*
+/* out start css
 =========================== */
+
+
+/* out map css
+=========================== */
+
+
+/*
+ *Scrolling
+ */
+
+a[ name= "form" ]:target ~ #main div.panel {
+	-webkit-transform: translateY( 0px);
+	transform: translateY( 0px );
+}
+
+a[ name= "out" ]:target ~ #main div.panel {
+	-webkit-transform: translateY( -105.5vh );
+	transform: translateY( -105.5vh );
+}
+a[ name= "map" ]:target ~ #main div.panel {
+	-webkit-transform: translateY( -205.5vh );
+	transform: translateY( -205.5vh );
+}

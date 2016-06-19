@@ -25,20 +25,12 @@
 	<script src="libs/placeholders/placeholders.js"></script>
 </head>
 <body>
-<header>
-    <div class="header-container animated fadeInDown">
-            <div class="hamburger">
-                <button class="c-hamburger c-hamburger--rot" id="button-top">
-                    <span>toggle menu</span>
-                </button>
-            </div>
-            <nav class="navigation">
-                <ul>
-                    <li><a id="link-form" href="#form">Форма заполнения</a></li>
-                    <li><a id="link-instruction" href="#instruction">Инструкция</a></li>
-                    <li><a id="link-map" href="#map">Карта</a></li>
-                </ul>
-            </nav>
+<a name="form"></a>
+<a name="out"></a>
+<a name="map"></a>
+<section id="main">
+    <div id="form" class="panel">
+        <div class="header-container animated fadeInDown">
             <div id="fromBlock" class="col_name_of_street">
                 <i class="fa fa-map-marker fa-lg"></i>
                 <input id="from" type="text" onkeypress="checkValues()" placeholder="Откуда?" class="name_of_street effect-8" />
@@ -54,14 +46,23 @@
 				</span>
 			</div>
             <button type="button" id="submitButton" onclick="searchRoutes()" disabled class="search">Поиск маршрута</button>
+            <a href="#out" class="bottom">Ниже</a>
+        </div>
     </div>
-</header>
 
-<div id="out"></div>
-<div id="map"></div>
+
+    <div id="out" class="panel">
+        <a href="#form" class="top">Выше</a>
+        <a href="#map"  class="bottom">Ниже</a>
+    </div>
+
+
+    <div id="map" class="panel">
+        <a href="#out" class="top">Выше</a>
+    </div>
+</section>
 
 <script src="js/script.js"></script>
-<script src="js/menu.js"></script>
 
 </body>
 </html>
