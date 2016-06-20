@@ -67,7 +67,6 @@
 	.search{ 
     margin: 10px 0 0 5px;
     padding: 7px 0;
-	width: 49%;
 	}
     
 	.icon-location{ top: 15px;}
@@ -80,6 +79,11 @@
 	.bottom:last-of-type{ bottom: 120px; }
 
 	#form a{ top: 200px;}
+
+	.search{
+		width: 99%;
+		margin:10px auto 0 0.5%;
+	}
 }
 
 @media (min-width: 481px) and (max-width: 600px){
@@ -89,6 +93,11 @@
 	.bottom:last-of-type{ bottom: 200px; }
 
 	#form a{ top: 200px;}
+
+	.search{
+		width: 98.75%;
+		margin:10px auto 0 0.5%;
+	}
 }
 
 @media (min-width: 321px) and (max-width: 480px){
@@ -98,4 +107,9 @@
 	.bottom:last-of-type{ bottom: 100px; }
 
 	#form a{ top: 200px;}
+
+	.search{
+		width: 98.5%;
+		margin:10px auto 0 0.5%;
+	}
 }
