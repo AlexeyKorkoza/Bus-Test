@@ -15,15 +15,24 @@ function onSuccessCallback(position) {
   longitude = position.coords.longitude;
   accuracy = position.coords.accuracy;
 
-
-  output.innerHTML = '<p>Latitude is ' + latitude + '° <br>' +
-      'Longitude is ' + longitude + '°<br>Accuracy: ' + accuracy + '</p>';
 }
 
-function onErrorCallback() {
-  output.innerHTML = errors[onErrorCallback.code];
-  el.style.display = 'block';
+function onErrorCallback(error) {
+  console.log(errors[error.code]);
+  resizeSubmitButton();
   fromFlag = true;
+}
+
+function resizeSubmitButton(){
+  el.style.display = 'block';
+  var width = window.innerWidth;
+  if(width < 768){
+  el.style.marginBottom = "10px";
+  }
+  if(width >= 768){
+  document.getElementById('submitButton').style.marginTop = "10px";
+  document.getElementById('submitButton').style.width = "98.5%";
+  }
 }
 
 function geoFindMe() {
@@ -33,19 +42,18 @@ function geoFindMe() {
     output.innerHTML = '<p>Geolocation is not supported by your browser</p>';
   } else {
     navigator.geolocation.getCurrentPosition(onSuccessCallback, onErrorCallback,
-    { enableHighAccuracy: true, timeout: timeoutVal });
+      { enableHighAccuracy: true, timeout: timeoutVal });
   }
 }
 
 $(document).ready(() => {
   document.getElementById('fromBlock').classList.add('animated', 'bounceInLeft');
   document.getElementById('fromBlock').style.display = 'none';
-
   geoFindMe();
-  output.innerHTML = '<p>Locating…</p>';
 });
 
 function searchRoutes() {
+  document.getElementById('on-icon-down-big').style.display = 'block';
   const xhr = new XMLHttpRequest();
   let json;
   
@@ -67,7 +75,6 @@ function searchRoutes() {
   xhr.open('POSt', '/url', true);
   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
   console.log(json);
-  // xhr.send(json);
 }
 
 function checkValues() {
@@ -87,7 +94,4 @@ function checkValues() {
       $('#submitButton').attr('disabled', 'disabled');
     }
   }
-
-  // document.getElementById('submitButton')
-  //     .disabled = fromBlock.value || toBlock.value ? false : 'disabled';
 }

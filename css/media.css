@@ -1,57 +1,101 @@
 ﻿@media (min-width: 981px){ 
-	.header-container,#map{
-		margin: 0 auto;
-		width:940px;
+	.header-container{
+	 margin: 0 auto;
+	 width:940px;
 	}
-	
-	header form,.col-name_of_street{
-	  margin: 0;
-	  float:left;
+
+	.top,.bottom {
+		left: 50%;
+		font-size:40pt;
 	}
-  
-	header form{ width:39.5%; }
-  
-	.col-name_of_street{ width:59.5%; }
-    
+
+	.bottom:last-of-type{ bottom: 20px;}
+
+	.bottom:first-of-type{ bottom: -300px;}
+
+	#form a{ top: 200px;}
+
+	.col_name_of_street {
+		margin:10px 0 0 5px;
+		float:left;
+		width:49%;
+	}
+
 	.name_of_street{ padding: 5px 0 5px 30px; }
-  
-	.search{ 
-    margin: 0 0 0 5px;
-    padding: 5px 0;
+
+	.search{
+		margin: 10px 0 0 5px;
+		padding: 7px 0;
+		width: 49%;
 	}
-	
-	.fa-map-marker{ top: 15px;}
+
+	.icon-location{ top: 15px;}
+
+	a[ name= "form" ]:target ~ #main div.panel {
+		-webkit-transform: translateY( 0px);
+		transform: translateY( 0px );
+	}
+
+	a[ name= "out" ]:target ~ #main div.panel {
+		-webkit-transform: translateY( -108% );
+		transform: translateY( -108% );
+	}
+	a[ name= "map" ]:target ~ #main div.panel {
+		-webkit-transform: translateY( -208% );
+		transform: translateY( -208% );
+	}
 }  
 
-@media (min-width: 768px) and (max-width: 980px) { 
-	header form,.col-name_of_street{
-	  margin: 0;
-	  float:left;
+@media (min-width: 768px) and (max-width: 980px) {
+	.top,.bottom {
+		left: 50%;
+		font-size:30pt;
 	}
-  
-	header form{ width:39.5%; }
-  
-	.col-name_of_street{ width:59.5%; }
-    
+
+	#form a{ top: 200px;}
+
+	.bottom:last-of-type{ bottom: 200px;}
+
+	.col_name_of_street {
+	  margin:10px 0 0 5px;
+	  float:left;
+	  width:49%;
+	}
+
 	.name_of_street{ padding: 5px 0 5px 30px; }
   
 	.search{ 
-    margin: 0 0 0 5px;
-    padding: 5px 0;
+    margin: 10px 0 0 5px;
+    padding: 7px 0;
+	width: 49%;
 	}
     
-	.fa-map-marker{ top: 15px;}
+	.icon-location{ top: 15px;}
 }
 
-@media screen and (min-width: 601px) and (max-width: 767px) { 
-  
+@media (min-width: 601px) and (max-width: 767px){
+
+	.bottom:first-of-type{ bottom: -300px; }
+
+	.bottom:last-of-type{ bottom: 120px; }
+
+	#form a{ top: 200px;}
 }
 
-@media screen and (min-width: 481px) and (max-width: 600px){
-        
- }
+@media (min-width: 481px) and (max-width: 600px){
 
-@media screen and (min-width: 321px) and (max-width: 480px) { 
-    
- 
+	.bottom:first-of-type{ bottom: -100px; }
+
+	.bottom:last-of-type{ bottom: 200px; }
+
+	#form a{ top: 200px;}
+}
+
+@media (min-width: 321px) and (max-width: 480px){
+
+	.bottom:first-of-type{ bottom: -70px; }
+
+	.bottom:last-of-type{ bottom: 100px; }
+
+	#form a{ top: 200px;}
 }

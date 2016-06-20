@@ -1,42 +1,72 @@
 ﻿body,html{
-    /* margin:0;
+    margin:0;
 	padding:0;
-	width: 100%;
-	height:100%; */
-    background:#ebebeb;
+	background:#ebebeb;
 }
 
-/* header start css
-=========================== */
-header{
-	width:100%;
-	height: auto;
-	overflow: hidden;
-	padding: 30px 0;
-}	
-	
-.header-container{ position: relative; }
+body{ overflow: hidden; }
 
-.fa-map-marker{
+#form,#out,#map{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.panel{
+	height: 98%;
+	min-width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-transition: all .6s ease-in-out;
+	transition: all .6s ease-in-out;
+}
+
+/* icons start css
+=========================== */
+.top,.bottom{
+	text-decoration: none;
+	font-size:20pt;
+	color:#0000CD;
+	position: absolute;
+	left:50%;
+}
+
+.top:hover,.bottom:hover{
+	color:#55ff00;
+	transition:all 0.3s ease;
+}
+
+.top{ top:0; }
+
+.bottom:first-of-type{ bottom: -70px;}
+
+.bottom:last-of-type { bottom: 10px; }
+
+/* form start css
+=========================== */
+#form{ padding-top:5%; }
+	
+.icon-location{
 	position: absolute;
 	top:12px;
 	left:10px;
 }
 
-.name_of_street,.search{ font:24px 'OpenSansLight'; } 
+.name_of_street,.search,.navigation li a{ font:24px 'OpenSansLight'; }
 
-header form,.col-name_of_street{
+.col_name_of_street {
 	width:99%; 
 	margin:0 auto;
+	position: relative;
 }
+
+#fromBlock{ margin-top: 10px; }
 
 .name_of_street{
 	padding-left:30px;
 	box-sizing: border-box;
 	width:100%;
 }
-
-.col-name_of_street{ position: relative;}
 
 .name_of_street:focus{ outline: none;}
 
@@ -57,12 +87,42 @@ header form,.col-name_of_street{
 	border: none;
 	text-align:center;
 	background:#0000CD;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
 	border-radius:5px;
-	padding:10px 0;
+	padding:11px 0;
 	color:white;
 	margin:10px auto 0 auto;
+	cursor: pointer;
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
-/* header end css
+
+.search:hover{ background: #555555; }
+
+#on-icon-down-big{
+	top: 200px;
+	display: none;
+}
+
+/* out start css
 =========================== */
+
+/* out map css
+=========================== */
+
+/*
+ *Scrolling
+ */
+
+a[ name= "form" ]:target ~ #main div.panel {
+	-webkit-transform: translateY( 0px);
+	transform: translateY( 0px );
+}
+
+a[ name= "out" ]:target ~ #main div.panel {
+	-webkit-transform: translateY( -103% );
+	transform: translateY( -103% );
+}
+a[ name= "map" ]:target ~ #main div.panel {
+	-webkit-transform: translateY( -203% );
+	transform: translateY( -203% );
+}
