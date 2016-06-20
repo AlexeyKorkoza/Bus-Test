@@ -29,7 +29,7 @@
 		width: 49%;
 	}
 
-	.fa-map-marker{ top: 15px;}
+	.icon-location{ top: 15px;}
 
 	a[ name= "form" ]:target ~ #main div.panel {
 		-webkit-transform: translateY( 0px);
@@ -70,7 +70,7 @@
 	width: 49%;
 	}
     
-	.fa-map-marker{ top: 15px;}
+	.icon-location{ top: 15px;}
 }
 
 @media (min-width: 601px) and (max-width: 767px){

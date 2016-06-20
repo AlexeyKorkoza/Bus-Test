@@ -15,13 +15,10 @@ function onSuccessCallback(position) {
   longitude = position.coords.longitude;
   accuracy = position.coords.accuracy;
 
-
-  output.innerHTML = '<p>Latitude is ' + latitude + '° <br>' +
-      'Longitude is ' + longitude + '°<br>Accuracy: ' + accuracy + '</p>';
 }
 
-function onErrorCallback() {
-  output.innerHTML = errors[onErrorCallback.code];
+function onErrorCallback(error) {
+  console.log(errors[error.code]);
   resizeSubmitButton();
   fromFlag = true;
 }
@@ -43,20 +40,20 @@ function geoFindMe() {
 
   if (!navigator.geolocation) {
     output.innerHTML = '<p>Geolocation is not supported by your browser</p>';
-  } /*else {
+  } else {
     navigator.geolocation.getCurrentPosition(onSuccessCallback, onErrorCallback,
       { enableHighAccuracy: true, timeout: timeoutVal });
-  }*/
+  }
 }
 
 $(document).ready(() => {
   document.getElementById('fromBlock').classList.add('animated', 'bounceInLeft');
-document.getElementById('fromBlock').style.display = 'none';
-/*geoFindMe();
-output.innerHTML = '<p>Locating…</p>';*/
+  document.getElementById('fromBlock').style.display = 'none';
+  geoFindMe();
 });
 
 function searchRoutes() {
+  document.getElementById('on-icon-down-big').style.display = 'block';
   const xhr = new XMLHttpRequest();
   let json;
   
@@ -78,7 +75,6 @@ function searchRoutes() {
   xhr.open('POSt', '/url', true);
   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
   console.log(json);
-  // xhr.send(json);
 }
 
 function checkValues() {
@@ -98,7 +94,4 @@ function checkValues() {
       $('#submitButton').attr('disabled', 'disabled');
     }
   }
-
-  // document.getElementById('submitButton')
-  //     .disabled = fromBlock.value || toBlock.value ? false : 'disabled';
 }

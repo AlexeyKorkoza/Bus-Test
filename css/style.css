@@ -1,9 +1,7 @@
 ﻿body,html{
     margin:0;
 	padding:0;
-	width: 100%;
-	height:100%;
-    background:#ebebeb;
+	background:#ebebeb;
 }
 
 body{ overflow: hidden; }
@@ -40,15 +38,15 @@ body{ overflow: hidden; }
 
 .top{ top:0; }
 
-.bottom:last-of-type { bottom: 10px; }
-
 .bottom:first-of-type{ bottom: -70px;}
+
+.bottom:last-of-type { bottom: 10px; }
 
 /* form start css
 =========================== */
 #form{ padding-top:5%; }
 	
-.fa-map-marker{
+.icon-location{
 	position: absolute;
 	top:12px;
 	left:10px;
@@ -99,6 +97,11 @@ body{ overflow: hidden; }
 }
 
 .search:hover{ background: #555555; }
+
+#on-icon-down-big{
+	top: 200px;
+	display: none;
+}
 
 /* out start css
 =========================== */
