@@ -4,33 +4,21 @@
 	 width:940px;
 	}
 
-	.hamburger{ display: none;}
-
-	.navigation{
-		display: block;
-		padding-bottom: 0;
-		width:98.4%;
-		margin: 0 auto;
+	.top,.bottom {
+		left: 50%;
+		font-size:40pt;
 	}
 
-	.navigation li{
-		display: inline-block;
-		border-bottom: 0;
-		padding: 15px 10px;
-	}
+	.bottom:last-of-type{ bottom: 20px;}
 
-	.navigation li:nth-of-type(2){
-		border-left:1px solid white;
-		border-right:1px solid white;
-	}
+	.bottom:first-of-type{ bottom: -300px;}
 
-	.navigation li:last-of-type{ margin-left: -4px}
+	#form a{ top: 200px;}
 
 	.col_name_of_street {
 		margin:10px 0 0 5px;
 		float:left;
 		width:49%;
-		float:left;
 	}
 
 	.name_of_street{ padding: 5px 0 5px 30px; }
@@ -42,34 +30,36 @@
 	}
 
 	.fa-map-marker{ top: 15px;}
+
+	a[ name= "form" ]:target ~ #main div.panel {
+		-webkit-transform: translateY( 0px);
+		transform: translateY( 0px );
+	}
+
+	a[ name= "out" ]:target ~ #main div.panel {
+		-webkit-transform: translateY( -108% );
+		transform: translateY( -108% );
+	}
+	a[ name= "map" ]:target ~ #main div.panel {
+		-webkit-transform: translateY( -208% );
+		transform: translateY( -208% );
+	}
 }  
 
 @media (min-width: 768px) and (max-width: 980px) {
-	.hamburger{ display: none; }
-
-	.navigation{
-		display: block;
-		padding-bottom: 0;
+	.top,.bottom {
+		left: 50%;
+		font-size:30pt;
 	}
 
-	.navigation li{
-		display: inline-block;
-		border-bottom: 0;
-		padding: 15px 10px;
-	}
+	#form a{ top: 200px;}
 
-	.navigation li:nth-of-type(2){
-		border-left:1px solid white;
-		border-right:1px solid white;
-	}
-
-	.navigation li:last-of-type{ margin-left: -4px}
+	.bottom:last-of-type{ bottom: 200px;}
 
 	.col_name_of_street {
 	  margin:10px 0 0 5px;
 	  float:left;
-	  width:49%; 
-	  float:left;
+	  width:49%;
 	}
 
 	.name_of_street{ padding: 5px 0 5px 30px; }
@@ -81,4 +71,31 @@
 	}
     
 	.fa-map-marker{ top: 15px;}
+}
+
+@media (min-width: 601px) and (max-width: 767px){
+
+	.bottom:first-of-type{ bottom: -300px; }
+
+	.bottom:last-of-type{ bottom: 120px; }
+
+	#form a{ top: 200px;}
+}
+
+@media (min-width: 481px) and (max-width: 600px){
+
+	.bottom:first-of-type{ bottom: -100px; }
+
+	.bottom:last-of-type{ bottom: 200px; }
+
+	#form a{ top: 200px;}
+}
+
+@media (min-width: 321px) and (max-width: 480px){
+
+	.bottom:first-of-type{ bottom: -70px; }
+
+	.bottom:last-of-type{ bottom: 100px; }
+
+	#form a{ top: 200px;}
 }

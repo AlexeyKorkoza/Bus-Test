@@ -9,14 +9,9 @@
 body{ overflow: hidden; }
 
 #form,#out,#map{
-	-webkit-transform: translateZ( 0 );
-	transform: translateZ( 0 );
-	-webkit-transition: -webkit-transform 0.6s ease-in-out;
-	transition: transform 0.6s ease-in-out;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
 	width: 100%;
 	height: 100vh;
+	position: relative;
 }
 
 .panel{
@@ -24,20 +19,34 @@ body{ overflow: hidden; }
 	min-width: 100%;
 	overflow-y: auto;
 	overflow-x: hidden;
+	-webkit-transition: all .6s ease-in-out;
+	transition: all .6s ease-in-out;
 }
 
-/* anchors start css
+/* icons start css
 =========================== */
 .top,.bottom{
-	position: relative;
+	text-decoration: none;
+	font-size:20pt;
+	color:#0000CD;
+	position: absolute;
 	left:50%;
 }
 
-.bottom{ top:95%; }
+.top:hover,.bottom:hover{
+	color:#55ff00;
+	transition:all 0.3s ease;
+}
+
+.top{ top:0; }
+
+.bottom:last-of-type { bottom: 10px; }
+
+.bottom:first-of-type{ bottom: -70px;}
 
 /* form start css
 =========================== */
-#form{ padding-top:5%;  }
+#form{ padding-top:5%; }
 	
 .fa-map-marker{
 	position: absolute;
@@ -57,8 +66,6 @@ body{ overflow: hidden; }
 
 .name_of_street{
 	padding-left:30px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width:100%;
 }
@@ -82,16 +89,12 @@ body{ overflow: hidden; }
 	border: none;
 	text-align:center;
 	background:#0000CD;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
 	border-radius:5px;
 	padding:11px 0;
 	color:white;
 	margin:10px auto 0 auto;
 	cursor: pointer;
 	-webkit-transition-duration: 0.5s;
-	-moz-transition-duration: 0.5s;
-	-o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
 
@@ -100,10 +103,8 @@ body{ overflow: hidden; }
 /* out start css
 =========================== */
 
-
 /* out map css
 =========================== */
-
 
 /*
  *Scrolling
@@ -115,10 +116,10 @@ a[ name= "form" ]:target ~ #main div.panel {
 }
 
 a[ name= "out" ]:target ~ #main div.panel {
-	-webkit-transform: translateY( -105.5vh );
-	transform: translateY( -105.5vh );
+	-webkit-transform: translateY( -103% );
+	transform: translateY( -103% );
 }
 a[ name= "map" ]:target ~ #main div.panel {
-	-webkit-transform: translateY( -205.5vh );
-	transform: translateY( -205.5vh );
+	-webkit-transform: translateY( -203% );
+	transform: translateY( -203% );
 }

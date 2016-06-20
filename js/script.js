@@ -43,17 +43,17 @@ function geoFindMe() {
 
   if (!navigator.geolocation) {
     output.innerHTML = '<p>Geolocation is not supported by your browser</p>';
-  } else {
+  } /*else {
     navigator.geolocation.getCurrentPosition(onSuccessCallback, onErrorCallback,
-    { enableHighAccuracy: true, timeout: timeoutVal });
-  }
+      { enableHighAccuracy: true, timeout: timeoutVal });
+  }*/
 }
 
 $(document).ready(() => {
   document.getElementById('fromBlock').classList.add('animated', 'bounceInLeft');
-  document.getElementById('fromBlock').style.display = 'none';
-  geoFindMe();
-  output.innerHTML = '<p>Locating…</p>';
+document.getElementById('fromBlock').style.display = 'none';
+/*geoFindMe();
+output.innerHTML = '<p>Locating…</p>';*/
 });
 
 function searchRoutes() {
