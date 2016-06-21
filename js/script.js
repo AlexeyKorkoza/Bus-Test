@@ -30,10 +30,10 @@ function onSuccessCallback(position) {
   accuracy = position.coords.accuracy;
 
   json = {
-    'location' : {
-      'lat' : latitude,
-      'lon' : longitude,
-      'accuracy' : accuracy
+    'location': {
+      'lat': latitude,
+      'lon': longitude,
+      'accuracy': accuracy
     },
     'to': $('#to').val()
   };
@@ -53,7 +53,7 @@ function onErrorCallback(error) {
   requestFlag = true;
 }
 
-function resizeSubmitButton(){
+function resizeSubmitButton() {
   fromBlock.style.display = 'block';
   let width = window.innerWidth;
   if (width < 768) {
@@ -72,7 +72,7 @@ function geoFindMe() {
     alert('Geolocation is not supported by your browser');
   } else {
     navigator.geolocation.getCurrentPosition(onSuccessCallback, onErrorCallback,
-      { enableHighAccuracy: true, timeout: timeoutVal });
+      {enableHighAccuracy: true, timeout: timeoutVal});
   }
 }
 
@@ -104,9 +104,9 @@ function searchRoutes() {
   geoFindMe();
 
   if (requestFlag && !checkFlag) {
-    json ={
-      'from' : $('#from').val(),
-      'to' : $('#to').val()
+    json = {
+      'from': $('#from').val(),
+      'to': $('#to').val()
     };
     console.log(json);
     xhr.open('POST', '/url', true);
