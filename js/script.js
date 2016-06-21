@@ -8,7 +8,7 @@ const errors = {
 let fromFlag = false;
 let latitude;
 let longitude;
-let accuracy ;
+let accuracy;
 
 function onSuccessCallback(position) {
   latitude = position.coords.latitude;
@@ -23,15 +23,15 @@ function onErrorCallback(error) {
   fromFlag = true;
 }
 
-function resizeSubmitButton(){
+function resizeSubmitButton() {
   el.style.display = 'block';
   var width = window.innerWidth;
-  if(width < 768){
-  el.style.marginBottom = "10px";
+  if (width < 768) {
+    el.style.marginBottom = "10px";
   }
-  if(width >= 768){
-  document.getElementById('submitButton').style.marginTop = "10px";
-  document.getElementById('submitButton').style.width = "98.5%";
+  if (width >= 768) {
+    document.getElementById('submitButton').style.marginTop = "10px";
+    document.getElementById('submitButton').style.width = "98.5%";
   }
 }
 
@@ -42,7 +42,7 @@ function geoFindMe() {
     output.innerHTML = '<p>Geolocation is not supported by your browser</p>';
   } else {
     navigator.geolocation.getCurrentPosition(onSuccessCallback, onErrorCallback,
-      { enableHighAccuracy: true, timeout: timeoutVal });
+      {enableHighAccuracy: true, timeout: timeoutVal});
   }
 }
 
@@ -56,18 +56,18 @@ function searchRoutes() {
   document.getElementById('on-icon-down-big').style.display = 'block';
   const xhr = new XMLHttpRequest();
   let json;
-  
-  if(fromFlag) {
-    json ={
-      'from' : $('#from').val(),
-      'to' : $('#to').val()
+
+  if (fromFlag) {
+    json = {
+      'from': $('#from').val(),
+      'to': $('#to').val()
     };
   } else {
     json = {
-      'location' : {
-        'lat' : latitude,
-        'lon' : longitude,
-        'accuracy' : accuracy
+      'location': {
+        'lat': latitude,
+        'lon': longitude,
+        'accuracy': accuracy
       },
       'to': $('#to').val()
     };
