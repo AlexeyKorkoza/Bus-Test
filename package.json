@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
     "htmllint": "htmllint .html",
     "start": "http-server"
   },
@@ -28,7 +28,7 @@
     "eslint-plugin-jsx-a11y": "^1.4.2",
     "eslint-plugin-react": "^5.1.1",
     "htmllint": "^0.3.0",
-    "husky": "^0.11.4",
+    "husky": "^0.11.4"
   },
   "dependencies": {}
 }
