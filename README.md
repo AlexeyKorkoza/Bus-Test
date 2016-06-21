@@ -1,10 +1,14 @@
 <h1><b>Plain-destination</b></h1>
-<h2>Structure</h2>
-| filename  | Content a file |
-| ------------- | ------------- |
-| index.html  | Main file in page-proofs  |
-| css/style.css  | Main styles  |
-| css/reset.css  | Reset CSS of Eric Mayer |
-| css/fonts.css  | Connect different the fonts |
-| css/media.css  | Main styles  |
-| js/script.css  | Work for element of form |
+
+**Description**
+Client part of the application. In this app you can find way to get to any point in the shortest time.
+
+_Input data_: you location + some adress or two adresses
+
+**Install and Run**
+ - clone this project
+ - http-server + project folder(at this moment only this way)
+
+**Demo**
+ - all bus-stops with transport routes ([demo](https://mobile-osm.surge.sh/))
+ - base client app ([demo](https://pathetic-partner.surge.sh/))
