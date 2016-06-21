@@ -20,9 +20,6 @@ let json;
 
 fromBlock.classList.add('animated', 'bounceInLeft');
 fromBlock.style.display = 'none';
-from.onkeyup = checkValues;
-to.onkeyup = checkValues;
-submitButton.onclick = searchRoutes;
 
 function onSuccessCallback(position) {
   latitude = position.coords.latitude;
@@ -30,18 +27,29 @@ function onSuccessCallback(position) {
   accuracy = position.coords.accuracy;
 
   json = {
-    'location' : {
-      'lat' : latitude,
-      'lon' : longitude,
-      'accuracy' : accuracy
+    location: {
+      lat: latitude,
+      lon: longitude,
+      accuracy,
     },
-    'to': $('#to').val()
+    to: $('#to').val(),
   };
   iconDown.style.display = 'block';
 
   xhr.open('POST', '/url', true);
   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-  console.log(json);
+}
+
+function resizeSubmitButton() {
+  fromBlock.style.display = 'block';
+  const width = window.innerWidth;
+  if (width < 768) {
+    fromBlock.style.marginBottom = '10px';
+  }
+  if (width >= 768) {
+    submitButton.style.marginTop = '10px';
+    submitButton.style.width = '98.5%';
+  }
 }
 
 function onErrorCallback(error) {
@@ -51,18 +59,6 @@ function onErrorCallback(error) {
 
   fromFlag = true;
   requestFlag = true;
-}
-
-function resizeSubmitButton(){
-  fromBlock.style.display = 'block';
-  let width = window.innerWidth;
-  if (width < 768) {
-    fromBlock.style.marginBottom = '10px';
-  }
-  if (width >= 768) {
-    submitButton.style.marginTop = '10px';
-    submitButton.style.width = '98.5%';
-  }
 }
 
 function geoFindMe() {
@@ -104,12 +100,16 @@ function searchRoutes() {
   geoFindMe();
 
   if (requestFlag && !checkFlag) {
-    json ={
-      'from' : $('#from').val(),
-      'to' : $('#to').val()
+    json = {
+      from: $('#from').val(),
+      to: $('#to').val(),
     };
     console.log(json);
     xhr.open('POST', '/url', true);
     xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
   }
 }
+
+from.onkeyup = checkValues;
+to.onkeyup = checkValues;
+submitButton.onclick = searchRoutes;
