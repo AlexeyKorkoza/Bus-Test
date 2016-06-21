@@ -1,8 +1,7 @@
 {
-    "line-end-style": "crlf",
-    "indent-width": "2",
-    "indent-style": "spaces",
-     "doctype-html5": true,
-     "id-class-style": false,
-     "tag-bans": false
+  "line-end-style": "lf",
+  "indent-width": "2",
+  "doctype-html5": true,
+  "id-class-style": false,
+  "tag-bans": false
 }
