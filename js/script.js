@@ -1,37 +1,67 @@
-const output = document.getElementById('out');
-const el = document.getElementById('fromBlock');
+const fromBlock = document.getElementById('fromBlock');
+const submitButton = document.getElementById('submitButton');
+const from = document.getElementById('form');
+const to = document.getElementById('to');
+const iconDown = document.getElementById('on-icon-down-big');
 const errors = {
   1: 'Permission denied',
   2: 'Position unavailable',
   3: 'Request timeout',
 };
+const xhr = new XMLHttpRequest();
+
 let fromFlag = false;
+let requestFlag = false;
+let checkFlag = false;
 let latitude;
 let longitude;
 let accuracy;
+let json;
+
+fromBlock.classList.add('animated', 'bounceInLeft');
+fromBlock.style.display = 'none';
+from.onkeyup = checkValues;
+to.onkeyup = checkValues;
+submitButton.onclick = searchRoutes;
 
 function onSuccessCallback(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   accuracy = position.coords.accuracy;
 
+  json = {
+    'location': {
+      'lat': latitude,
+      'lon': longitude,
+      'accuracy': accuracy
+    },
+    'to': $('#to').val()
+  };
+  iconDown.style.display = 'block';
+
+  xhr.open('POST', '/url', true);
+  xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  console.log(json);
 }
 
 function onErrorCallback(error) {
   console.log(errors[error.code]);
+  fromBlock.style.display = 'block';
   resizeSubmitButton();
+
   fromFlag = true;
+  requestFlag = true;
 }
 
 function resizeSubmitButton() {
-  el.style.display = 'block';
-  var width = window.innerWidth;
+  fromBlock.style.display = 'block';
+  let width = window.innerWidth;
   if (width < 768) {
-    el.style.marginBottom = "10px";
+    fromBlock.style.marginBottom = '10px';
   }
   if (width >= 768) {
-    document.getElementById('submitButton').style.marginTop = "10px";
-    document.getElementById('submitButton').style.width = "98.5%";
+    submitButton.style.marginTop = '10px';
+    submitButton.style.width = '98.5%';
   }
 }
 
@@ -39,59 +69,48 @@ function geoFindMe() {
   const timeoutVal = 20 * 1000;
 
   if (!navigator.geolocation) {
-    output.innerHTML = '<p>Geolocation is not supported by your browser</p>';
+    alert('Geolocation is not supported by your browser');
   } else {
     navigator.geolocation.getCurrentPosition(onSuccessCallback, onErrorCallback,
       {enableHighAccuracy: true, timeout: timeoutVal});
   }
 }
 
-$(document).ready(() => {
-  document.getElementById('fromBlock').classList.add('animated', 'bounceInLeft');
-  document.getElementById('fromBlock').style.display = 'none';
-  geoFindMe();
-});
-
-function searchRoutes() {
-  document.getElementById('on-icon-down-big').style.display = 'block';
-  const xhr = new XMLHttpRequest();
-  let json;
+function checkValues() {
+  const fromText = $('#from').val();
+  const toText = $('#to').val();
 
   if (fromFlag) {
+    if (fromText.length !== 0 && toText.length !== 0) {
+      $('#submitButton').removeAttr('disabled');
+      checkFlag = false;
+    } else {
+      $('#submitButton').attr('disabled', 'disabled');
+      checkFlag = true;
+    }
+  } else {
+    if (toText.length !== 0) {
+      $('#submitButton').removeAttr('disabled');
+      checkFlag = false;
+    } else {
+      $('#submitButton').attr('disabled', 'disabled');
+      checkFlag = true;
+    }
+  }
+}
+
+function searchRoutes() {
+  checkValues();
+  geoFindMe();
+
+  if (requestFlag && !checkFlag) {
+    iconDown.style.display = 'block';
     json = {
       'from': $('#from').val(),
       'to': $('#to').val()
     };
-  } else {
-    json = {
-      'location': {
-        'lat': latitude,
-        'lon': longitude,
-        'accuracy': accuracy
-      },
-      'to': $('#to').val()
-    };
-  }
-  xhr.open('POSt', '/url', true);
-  xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-  console.log(json);
-}
-
-function checkValues() {
-  const fromBlock = $('#from').val();
-  const toBlock = $('#to').val();
-
-  if (fromFlag) {
-    if (fromBlock.length !== 0 && toBlock.length !== 0) {
-      $('#submitButton').removeAttr('disabled');
-    } else {
-      $('#submitButton').attr('disabled', 'disabled');
-    }
-  } else {
-    if (toBlock.length !== 0) {
-      $('#submitButton').removeAttr('disabled');
-    } else {
-      $('#submitButton').attr('disabled', 'disabled');
-    }
+    console.log(json);
+    xhr.open('POST', '/url', true);
+    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
   }
 }
