@@ -23,5 +23,9 @@
     "eslint-plugin-jsx-a11y": "^1.4.2",
     "eslint-plugin-react": "^5.1.1"
   },
-  "dependencies": {}
+  "scripts": {
+    "watch": "npm install http-server -g",
+    "start": "npm run watch && npm run start-dev",
+    "start-dev":"http-server"
+  }
 }
