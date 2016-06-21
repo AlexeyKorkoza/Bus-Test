@@ -38,7 +38,6 @@ function onSuccessCallback(position) {
 
   xhr.open('POST', '/url', true);
   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-  console.log(json);
 }
 
 function resizeSubmitButton() {
