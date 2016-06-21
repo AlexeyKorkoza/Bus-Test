@@ -1,110 +1,147 @@
-﻿@media (min-width: 981px){ 
-	.header-container{
-	 margin: 0 auto;
-	 width:940px;
-	}
+﻿@media (min-width: 981px) {
+  .header-container {
+    margin: 0 auto;
+    width: 940px;
+  }
 
-	.top,.bottom {
-		left: 50%;
-		font-size:40pt;
-	}
+  .top, .bottom {
+    left: 50%;
+    font-size: 40pt;
+  }
 
-	.bottom:last-of-type{ bottom: 20px;}
+  .bottom:last-of-type {
+    bottom: 20px;
+  }
 
-	.bottom:first-of-type{ bottom: -300px;}
+  .bottom:first-of-type {
+    bottom: -300px;
+  }
 
-	#form a{ top: 200px;}
+  #form a {
+    top: 200px;
+  }
 
-	.col_name_of_street {
-		margin:10px 0 0 5px;
-		float:left;
-		width:49%;
-	}
+  .col_name_of_street {
+    margin: 10px 0 0 5px;
+    float: left;
+    width: 49%;
+  }
 
-	.name_of_street{ padding: 5px 0 5px 30px; }
+  .name_of_street {
+    padding: 5px 0 5px 30px;
+  }
 
-	.search{
-		margin: 10px 0 0 5px;
-		padding: 7px 0;
-		width: 49%;
-	}
-
-	.icon-location{ top: 15px;}
-
-	a[ name= "form" ]:target ~ #main div.panel {
-		-o-transform:translateY(0px);
-		-moz-transform: translateY( 0px);
-		-ms-transform: translateY( 0px);
-		-webkit-transform: translateY( 0px);
-		transform: translateY( 0px );
-	}
-
-	a[ name= "out" ]:target ~ #main div.panel {
-		-o-transform:translateY(-108%);
-		-moz-transform: translateY(-108%);
-		-ms-transform: translateY( -108%);
-		-webkit-transform: translateY( -108%);
-		transform: translateY( -108% );
-	}
-	a[ name= "map" ]:target ~ #main div.panel {
-		-o-transform:translateY(-208%);
-		-moz-transform: translateY(-208%);
-		-ms-transform: translateY( -208%);
-		-webkit-transform: translateY( -208%);
-		transform: translateY( -208% );
-	}
-}  
-
-@media (min-width: 768px) and (max-width: 980px) {
-	.top,.bottom {
-		left: 50%;
-		font-size:30pt;
-	}
-
-	#form a{ top: 200px;}
-
-	.bottom:last-of-type{ bottom: 200px;}
-
-	.col_name_of_street {
-	  margin:10px 0 0 5px;
-	  float:left;
-	  width:49%;
-	}
-
-	.name_of_street{ padding: 5px 0 5px 30px; }
-  
-	.search{ 
+  .search {
     margin: 10px 0 0 5px;
     padding: 7px 0;
-	width: 49%;
-	}
-    
-	.icon-location{ top: 15px;}
+    width: 49%;
+  }
+
+  .icon-location {
+    top: 15px;
+  }
+
+  a[ name= "form" ]:target ~ #main div.panel {
+    -o-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  a[ name= "out" ]:target ~ #main div.panel {
+    -o-transform: translateY(-108%);
+    -moz-transform: translateY(-108%);
+    -ms-transform: translateY(-108%);
+    -webkit-transform: translateY(-108%);
+    transform: translateY(-108%);
+  }
+
+  a[ name= "map" ]:target ~ #main div.panel {
+    -o-transform: translateY(-208%);
+    -moz-transform: translateY(-208%);
+    -ms-transform: translateY(-208%);
+    -webkit-transform: translateY(-208%);
+    transform: translateY(-208%);
+  }
 }
 
-@media (min-width: 601px) and (max-width: 767px){
+@media (min-width: 768px) and (max-width: 980px) {
+  .top, .bottom {
+    left: 50%;
+    font-size: 30pt;
+  }
 
-	.bottom:first-of-type{ bottom: -300px; }
+  #form a {
+    top: 200px;
+  }
 
-	.bottom:last-of-type{ bottom: 120px; }
+  .bottom:last-of-type {
+    bottom: 200px;
+  }
 
-	#form a{ top: 200px;}
+  .col_name_of_street {
+    margin: 10px 0 0 5px;
+    float: left;
+    width: 49%;
+  }
+
+  .name_of_street {
+    padding: 5px 0 5px 30px;
+  }
+
+  .search {
+    margin: 10px 0 0 5px;
+    padding: 7px 0;
+    width: 49%;
+  }
+
+  .icon-location {
+    top: 15px;
+  }
 }
 
-@media (min-width: 481px) and (max-width: 600px){
+@media (min-width: 601px) and (max-width: 767px) {
 
-	.bottom:first-of-type{ bottom: -100px; }
+  .bottom:first-of-type {
+    bottom: -300px;
+  }
 
-	.bottom:last-of-type{ bottom: 200px; }
+  .bottom:last-of-type {
+    bottom: 120px;
+  }
 
-	#form a{ top: 200px;}
+  #form a {
+    top: 200px;
+  }
 }
 
-@media (min-width: 321px) and (max-width: 480px){
+@media (min-width: 481px) and (max-width: 600px) {
 
-	.bottom:first-of-type{ bottom: -70px; }
+  .bottom:first-of-type {
+    bottom: -100px;
+  }
 
-	.bottom:last-of-type{ bottom: 100px; }
+  .bottom:last-of-type {
+    bottom: 200px;
+  }
 
-	#form a{ top: 200px;}
+  #form a {
+    top: 200px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+
+  .bottom:first-of-type {
+    bottom: -70px;
+  }
+
+  .bottom:last-of-type {
+    bottom: 100px;
+  }
+
+  #form a {
+    top: 200px;
+  }
 }
