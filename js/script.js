@@ -95,9 +95,6 @@ function checkValues() {
   }
 }
 
-from.onkeyup = checkValues;
-to.onkeyup = checkValues;
-
 function searchRoutes() {
   checkValues();
   geoFindMe();
@@ -113,4 +110,6 @@ function searchRoutes() {
   }
 }
 
+from.onkeyup = checkValues;
+to.onkeyup = checkValues;
 submitButton.onclick = searchRoutes;
