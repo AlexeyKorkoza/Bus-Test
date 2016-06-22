@@ -1,7 +1,7 @@
 {
-  "name": "bus-client",
+  "name": "plain-destination",
   "version": "0.0.1",
-  "description": "<h1><b>Plain-destination</b></h1>\r <h2>Structure</h2>\r | filename  | Content a file |\r | ------------- | ------------- |\r | index.html  | Main file in page-proofs  |\r | css/style.css  | Main styles  |\r | css/reset.css  | Reset CSS of Eric Mayer |\r | css/fonts.css  | Connect different the fonts |\r | css/media.css  | Main styles  |\r | js/script.css  | Work for element of form |",
+  "description": "Client part of the application. In this app you can find way to get to any point in the shortest time",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
