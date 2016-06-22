@@ -55,7 +55,7 @@ body{ overflow: hidden; }
 .name_of_street,.search,.navigation li a{ font:24px 'OpenSansLight'; }
 
 .col_name_of_street {
-	width:99%; 
+	width:98%;
 	margin:0 auto;
 	position: relative;
 }
@@ -80,6 +80,11 @@ body{ overflow: hidden; }
 .effect-8:focus ~ .focus-border:after{width: 100%; transition: 0.3s;}
 .effect-8:focus ~ .focus-border i:before,
 .effect-8:focus ~ .focus-border i:after{height: 100%; transition: 0.4s;}
+
+.button{
+	width: 98%;
+	margin:0 auto;
+}
 
 .search{
 	width:100%;
