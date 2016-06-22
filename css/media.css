@@ -16,17 +16,19 @@
 	#form a{ top: 200px;}
 
 	.col_name_of_street {
-		margin:10px 0 0 5px;
+		margin-top:10px;
+	}
+
+	.col_name_of_street,#button{
 		float:left;
-		width:49%;
+		width:48.5%;
 	}
 
 	.name_of_street{ padding: 5px 0 5px 30px; }
 
 	.search{
-		margin: 10px 0 0 5px;
+		margin:10px 0 0 5px;
 		padding: 7px 0;
-		width: 49%;
 	}
 
 	.icon-location{ top: 15px;}
@@ -47,6 +49,11 @@
 }  
 
 @media (min-width: 768px) and (max-width: 980px) {
+	.header-container{
+		margin: 0 auto;
+		width:728px;
+	}
+
 	.top,.bottom {
 		left: 50%;
 		font-size:30pt;
@@ -57,19 +64,21 @@
 	.bottom:last-of-type{ bottom: 200px;}
 
 	.col_name_of_street {
-	  margin:10px 0 0 5px;
-	  float:left;
-	  width:49%;
+	  margin-top:10px;
+	}
+
+	.col_name_of_street,#button{
+		float:left;
+		width: 48.5%;
 	}
 
 	.name_of_street{ padding: 5px 0 5px 30px; }
-  
+
 	.search{ 
-    margin: 10px 0 0 5px;
+    margin:10px 0 0 5px;
     padding: 7px 0;
-	width: 49%;
 	}
-    
+
 	.icon-location{ top: 15px;}
 }
 

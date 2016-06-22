@@ -81,21 +81,21 @@ body{ overflow: hidden; }
 .effect-8:focus ~ .focus-border i:before,
 .effect-8:focus ~ .focus-border i:after{height: 100%; transition: 0.4s;}
 
-.button{
-	width: 98%;
+#button{
+	width:98%;
 	margin:0 auto;
+
 }
 
 .search{
 	width:100%;
-	clear: both;
 	border: none;
 	text-align:center;
 	background:#0000CD;
 	border-radius:5px;
 	padding:11px 0;
 	color:white;
-	margin:10px auto 0 auto;
+	margin-top:10px;
 	cursor: pointer;
 	-webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
