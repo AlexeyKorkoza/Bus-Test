@@ -15,8 +15,6 @@ body{ overflow: hidden; }
 .panel{
 	height: 98%;
 	min-width: 100%;
-	overflow-y: auto;
-	overflow-x: hidden;
 	-webkit-transition: all .6s ease-in-out;
 	transition: all .6s ease-in-out;
 }
@@ -36,11 +34,7 @@ body{ overflow: hidden; }
 	transition:all 0.3s ease;
 }
 
-.top{ top:0; }
-
 .bottom:first-of-type{ bottom: -70px;}
-
-.bottom:last-of-type { bottom: 10px; }
 
 /* form start css
 =========================== */

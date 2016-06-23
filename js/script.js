@@ -25,7 +25,7 @@ function onSuccessCallback(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   accuracy = position.coords.accuracy;
-
+  iconDown.style.display = 'block';
   json = {
     location: {
       lat: latitude,
@@ -34,7 +34,6 @@ function onSuccessCallback(position) {
     },
     to: $('#to').val(),
   };
-  iconDown.style.display = 'block';
 
   xhr.open('POST', '/url', true);
   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -102,6 +101,7 @@ function searchRoutes() {
   geoFindMe();
 
   if (requestFlag && !checkFlag) {
+    iconDown.style.display = 'block';
     json = {
       from: $('#from').val(),
       to: $('#to').val(),
