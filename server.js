@@ -14,8 +14,9 @@ app.get('/', (req, res, next) => {
   res.render('index');
 });
 
-app.post('/url', urlencodedParser, function (req, res) {
-  console.log(req.body);
+app.post('/api/search', urlencodedParser, (req, res) => {
+  console.log(req.body.searchObject);
+  res.send('ok');
 });
 
 http.createServer(app).listen(7788);
