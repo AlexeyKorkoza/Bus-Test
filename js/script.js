@@ -48,7 +48,9 @@ function resizeSubmitButton() {
   }
   if (width >= 768) {
     submitButton.style.marginTop = '10px';
-    submitButton.style.width = '98.5%';
+    submitButton.style.marginLeft = "0px";
+    document.getElementById('button').style.width = "97.5%";
+    fromBlock.style.marginRight = "5px";
   }
 }
 
