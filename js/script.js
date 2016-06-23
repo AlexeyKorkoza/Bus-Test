@@ -36,8 +36,11 @@ function onSuccessCallback(position) {
   };
   iconDown.style.display = 'block';
 
-  xhr.open('POST', '/url', true);
-  xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  const searchRequest = `searchObject=${JSON.stringify(json)}`;
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.open('POST', '/api/search');
+  xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xmlhttp.send(searchRequest);
 }
 
 function resizeSubmitButton() {
