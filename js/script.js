@@ -3,6 +3,8 @@ const submitButton = document.getElementById('submitButton');
 const from = document.getElementById('form');
 const to = document.getElementById('to');
 const iconDown = document.getElementById('on-icon-down-big');
+const out = document.getElementById('out');
+const map = document.getElementById('map');
 const errors = {
   1: 'Permission denied',
   2: 'Position unavailable',
@@ -26,6 +28,8 @@ function onSuccessCallback(position) {
   longitude = position.coords.longitude;
   accuracy = position.coords.accuracy;
   iconDown.style.display = 'block';
+  out.style.display = 'block';
+  map.style.display = 'block';
   json = {
     location: {
       lat: latitude,
@@ -41,15 +45,17 @@ function onSuccessCallback(position) {
 
 function resizeSubmitButton() {
   fromBlock.style.display = 'block';
+  out.style.display = 'block';
+  map.style.display = 'block';
   const width = window.innerWidth;
   if (width < 768) {
     fromBlock.style.marginBottom = '10px';
   }
   if (width >= 768) {
     submitButton.style.marginTop = '10px';
-    submitButton.style.marginLeft = "0px";
-    document.getElementById('button').style.width = "97.5%";
-    fromBlock.style.marginRight = "5px";
+    submitButton.style.marginLeft = '0px';
+    document.getElementById('button').style.width = '97.5%';
+    fromBlock.style.marginRight = '5px';
   }
 }
 
