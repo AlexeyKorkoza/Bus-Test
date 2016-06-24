@@ -2,5 +2,8 @@
   "extends": "airbnb",
   "env": {
     "jquery" : true
+  },
+  "globals": {
+    "L" : true
   }
 }

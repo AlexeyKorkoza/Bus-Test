@@ -12,6 +12,11 @@ body{ overflow: hidden; }
 	position: relative;
 }
 
+#map-body{
+	height:400px;
+	width: 100%;
+}
+
 .panel{
 	height: 98%;
 	min-width: 100%;
