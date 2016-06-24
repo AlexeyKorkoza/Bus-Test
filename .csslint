@@ -1,8 +1,9 @@
 {
-  "vendor-prefix": 2,
+  "vendor-prefix": false,
   "zero-units": true,
   "shorthand": true,
-  "text-indent": "",
+  "text-indent": true,
   "gradients": true,
-  "font-faces": true
+  "font-faces": true,
+  "ids":false
 }
