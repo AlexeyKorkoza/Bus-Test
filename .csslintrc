@@ -1,5 +1,5 @@
 {
-  "vendor-prefix": false,
+  "vendor-prefix": true,
   "zero-units": true,
   "shorthand": true,
   "text-indent": true,
