@@ -1,24 +1,35 @@
-﻿body,html{
-    margin:0;
-	padding:0;
-	background:#ebebeb;
+﻿*, :before, :after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{ overflow: hidden; }
-
-#form,#out,#map{
-	width: 100%;
-	height: 100vh;
-	position: relative;
+html, body {
+  height: 100%;
 }
 
-.panel{
-	height: 98%;
-	min-width: 100%;
-	overflow-y: auto;
-	overflow-x: hidden;
-	-webkit-transition: all .6s ease-in-out;
-	transition: all .6s ease-in-out;
+article {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+section {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
+/* display:none for several element*/
+#out,#map,#on-icon-down-big{
+	display: none;
 }
 
 /* icons start css
@@ -27,20 +38,13 @@ body{ overflow: hidden; }
 	text-decoration: none;
 	font-size:20pt;
 	color:#0000CD;
-	position: absolute;
-	left:50%;
+	text-align: center;
 }
 
 .top:hover,.bottom:hover{
 	color:#55ff00;
 	transition:all 0.3s ease;
 }
-
-.top{ top:0; }
-
-.bottom:first-of-type{ bottom: -70px;}
-
-.bottom:last-of-type { bottom: 10px; }
 
 /* form start css
 =========================== */
@@ -52,7 +56,7 @@ body{ overflow: hidden; }
 	left:10px;
 }
 
-.name_of_street,.search,.navigation li a{ font:24px 'OpenSansLight'; }
+.name_of_street,.search{ font:24px 'OpenSansLight'; }
 
 .col_name_of_street {
 	width:98%;
@@ -84,7 +88,6 @@ body{ overflow: hidden; }
 #button{
 	width:98%;
 	margin:0 auto;
-
 }
 
 .search{
@@ -104,8 +107,8 @@ body{ overflow: hidden; }
 .search:hover{ background: #555555; }
 
 #on-icon-down-big{
-	top: 200px;
-	display: none;
+	left:44.5%;
+	margin-top: 30px;
 }
 
 /* out start css
@@ -113,21 +116,3 @@ body{ overflow: hidden; }
 
 /* out map css
 =========================== */
-
-/*
- *Scrolling
- */
-
-a[ name= "form" ]:target ~ #main div.panel {
-	-webkit-transform: translateY( 0px);
-	transform: translateY( 0px );
-}
-
-a[ name= "out" ]:target ~ #main div.panel {
-	-webkit-transform: translateY( -103% );
-	transform: translateY( -103% );
-}
-a[ name= "map" ]:target ~ #main div.panel {
-	-webkit-transform: translateY( -203% );
-	transform: translateY( -203% );
-}

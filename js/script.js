@@ -3,6 +3,8 @@ const submitButton = document.getElementById('submitButton');
 const from = document.getElementById('form');
 const to = document.getElementById('to');
 const iconDown = document.getElementById('on-icon-down-big');
+const out = document.getElementById('out');
+const map = document.getElementById('map');
 const errors = {
   1: 'Permission denied',
   2: 'Position unavailable',
@@ -25,7 +27,9 @@ function onSuccessCallback(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   accuracy = position.coords.accuracy;
-
+  iconDown.style.display = 'block';
+  out.style.display = 'block';
+  map.style.display = 'block';
   json = {
     location: {
       lat: latitude,
@@ -34,7 +38,6 @@ function onSuccessCallback(position) {
     },
     to: $('#to').val(),
   };
-  iconDown.style.display = 'block';
 
   xhr.open('POST', '/url', true);
   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -42,6 +45,8 @@ function onSuccessCallback(position) {
 
 function resizeSubmitButton() {
   fromBlock.style.display = 'block';
+  out.style.display = 'block';
+  map.style.display = 'block';
   const width = window.innerWidth;
   if (width < 768) {
     fromBlock.style.marginBottom = '10px';
@@ -102,6 +107,7 @@ function searchRoutes() {
   geoFindMe();
 
   if (requestFlag && !checkFlag) {
+    iconDown.style.display = 'block';
     json = {
       from: $('#from').val(),
       to: $('#to').val(),

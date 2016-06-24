@@ -2,16 +2,13 @@
 	.header-container{
 	 margin: 0 auto;
 	 width:940px;
+		position: relative;
 	}
 
 	.top,.bottom {
 		left: 50%;
 		font-size:40pt;
 	}
-
-	.bottom:last-of-type{ bottom: 20px;}
-
-	.bottom:first-of-type{ bottom: -300px;}
 
 	#form a{ top: 200px;}
 
@@ -33,18 +30,10 @@
 
 	.icon-location{ top: 15px;}
 
-	a[ name= "form" ]:target ~ #main div.panel {
-		-webkit-transform: translateY( 0px);
-		transform: translateY( 0px );
-	}
-
-	a[ name= "out" ]:target ~ #main div.panel {
-		-webkit-transform: translateY( -108% );
-		transform: translateY( -108% );
-	}
-	a[ name= "map" ]:target ~ #main div.panel {
-		-webkit-transform: translateY( -208% );
-		transform: translateY( -208% );
+	#on-icon-down-big{
+		position: absolute;
+		bottom:0;
+		margin-top: 0;
 	}
 }  
 
@@ -52,6 +41,7 @@
 	.header-container{
 		margin: 0 auto;
 		width:728px;
+		position: relative;
 	}
 
 	.top,.bottom {
@@ -60,8 +50,6 @@
 	}
 
 	#form a{ top: 200px;}
-
-	.bottom:last-of-type{ bottom: 200px;}
 
 	.col_name_of_street {
 	  margin-top:10px;
@@ -80,31 +68,10 @@
 	}
 
 	.icon-location{ top: 15px;}
-}
 
-@media (min-width: 601px) and (max-width: 767px){
-
-	.bottom:first-of-type{ bottom: -300px; }
-
-	.bottom:last-of-type{ bottom: 120px; }
-
-	#form a{ top: 200px;}
-}
-
-@media (min-width: 481px) and (max-width: 600px){
-
-	.bottom:first-of-type{ bottom: -100px; }
-
-	.bottom:last-of-type{ bottom: 200px; }
-
-	#form a{ top: 200px;}
-}
-
-@media (min-width: 321px) and (max-width: 480px){
-
-	.bottom:first-of-type{ bottom: -70px; }
-
-	.bottom:last-of-type{ bottom: 100px; }
-
-	#form a{ top: 200px;}
+	#on-icon-down-big{
+	position: absolute;
+	bottom:0;
+	margin-top: 0;
+	}
 }
