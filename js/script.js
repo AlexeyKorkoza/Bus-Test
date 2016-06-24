@@ -8,7 +8,6 @@ const errors = {
   2: 'Position unavailable',
   3: 'Request timeout',
 };
-const xhr = new XMLHttpRequest();
 
 let fromFlag = false;
 let requestFlag = false;
@@ -20,6 +19,13 @@ let json;
 
 fromBlock.classList.add('animated', 'bounceInLeft');
 fromBlock.style.display = 'none';
+
+function sendRequest(searchRequest) {
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.open('POST', '/api/search');
+  xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xmlhttp.send(searchRequest);
+}
 
 function onSuccessCallback(position) {
   latitude = position.coords.latitude;
@@ -35,12 +41,8 @@ function onSuccessCallback(position) {
     to: $('#to').val(),
   };
   iconDown.style.display = 'block';
-
-  const searchRequest = `searchObject=${JSON.stringify(json)}`;
-  const xmlhttp = new XMLHttpRequest();
-  xmlhttp.open('POST', '/api/search');
-  xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xmlhttp.send(searchRequest);
+  const searchRequestWithGeo = `searchObjectWithGeo=${JSON.stringify(json)}`;
+  sendRequest(searchRequestWithGeo);
 }
 
 function resizeSubmitButton() {
@@ -51,9 +53,9 @@ function resizeSubmitButton() {
   }
   if (width >= 768) {
     submitButton.style.marginTop = '10px';
-    submitButton.style.marginLeft = "0px";
-    document.getElementById('button').style.width = "97.5%";
-    fromBlock.style.marginRight = "5px";
+    submitButton.style.marginLeft = '0px';
+    document.getElementById('button').style.width = '97.5%';
+    fromBlock.style.marginRight = '5px';
   }
 }
 
@@ -110,8 +112,8 @@ function searchRoutes() {
       to: $('#to').val(),
     };
     console.log(json);
-    xhr.open('POST', '/url', true);
-    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    const searchRequestWithoutGeo = `searchObjectWithoutGeo=${JSON.stringify(json)}`;
+    sendRequest(searchRequestWithoutGeo);
   }
 }
 
