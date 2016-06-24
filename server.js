@@ -10,13 +10,18 @@ app.use(express.static('./'));
 app.set('view engine', 'ejs');
 app.set('views', './');
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
   res.render('index');
 });
 
 app.post('/api/search', urlencodedParser, (req, res) => {
-  console.log(req.body.searchObject);
-  res.send('ok');
+  if (req.body.searchObjectWithGeo) {
+    console.log(req.body.searchObjectWithGeo);
+    // TO DO (with geolocation)
+    res.send('ok');
+    return;
+  }
+  // TO DO (without geolocation)
 });
 
 http.createServer(app).listen(7788);
