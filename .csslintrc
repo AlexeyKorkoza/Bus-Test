@@ -1,0 +1,9 @@
+ {
+ "vendor-prefix": false,
+ "zero-units": true,
+ "shorthand": true,
+ "text-indent": true,
+ "gradients": true,
+ "font-faces": true,
+ "ids": false
+}
