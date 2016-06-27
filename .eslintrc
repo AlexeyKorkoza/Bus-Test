@@ -2,5 +2,12 @@
   "extends": "airbnb",
   "env": {
     "jquery" : true
+  },
+  "globals": {
+    "L" : true
+  },
+  "rules": {
+    "no-console": "off",
+    "no-alert": "off"
   }
 }

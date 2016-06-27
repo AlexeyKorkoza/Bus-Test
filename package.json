@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "precommit": "concurrently 'npm run lint' 'npm run htmllint'",
+    "precommit": "concurrently \"npm run lint\" \"npm run htmllint\"",
     "htmllint": "htmllint .html",
     "start": "webpack-dev-server"
   },
@@ -31,7 +31,8 @@
     "htmllint-cli": "0.0.5",
     "husky": "^0.11.4",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "leaflet-mapkey-icon": "mapshakers/leaflet-mapkey-icon"
   },
   "dependencies": {}
 }
