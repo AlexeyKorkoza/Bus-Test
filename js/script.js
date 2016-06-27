@@ -245,6 +245,7 @@ function searchRoutes() {
     }
 
     createRequest(json);
+    iconDown.style.display = 'block';
   }
 }
 

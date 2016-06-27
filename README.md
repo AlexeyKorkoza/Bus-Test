@@ -11,4 +11,4 @@ _Input data_: you location + some adress or two adresses
 
 **Demo**
  - all bus-stops with transport routes ([demo](https://mobile-osm.surge.sh/))
- - base client app ([demo](spiteful-river.surge.sh))
+ - base client app ([demo](https://spiteful-river.surge.sh))
