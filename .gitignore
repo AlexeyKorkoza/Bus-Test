@@ -7,6 +7,5 @@ node_modules
 #ignore webpack bundle files
 dist
 
-
 #ignore surge.sh domain name
 CNAME
