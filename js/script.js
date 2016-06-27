@@ -1,111 +1,17 @@
+import GeoJson from '../models/GeoJson';
+import { startIcon, endIcon, busIcon } from '../models/Icons';
+
 const fromBlock = document.getElementById('fromBlock');
 const submitButton = document.getElementById('submitButton');
 const from = document.getElementById('form');
 const to = document.getElementById('to');
 const iconDown = document.getElementById('on-icon-down-big');
+const outBlock = document.getElementById('out-container');
 const errors = {
   1: 'Permission denied',
   2: 'Position unavailable',
   3: 'Request timeout',
 };
-const GeoJSON = [
-  {
-    type: 'Feature',
-    properties: {
-      name: 'start point',
-      type: 'start',
-      popupContent: 'Some popup!',
-    },
-    geometry: {
-      type: 'Point',
-      coordinates: [23.79417658, 53.6729683],
-    } },
-  {
-    type: 'Feature',
-    properties: {
-      name: 'bus stop',
-      type: 'bus_stop',
-      popupContent: 'Some popup!',
-    },
-    geometry: {
-      type: 'Point',
-      coordinates: [23.78851175, 53.66706981],
-    },
-  },
-  {
-    type: 'Feature',
-    properties: {
-      name: 'bus stop',
-      type: 'bus_stop',
-      popupContent: 'Some popup!',
-    },
-    geometry: {
-      type: 'Point',
-      coordinates: [23.78439188, 53.66429825],
-    },
-  },
-  {
-    type: 'Feature',
-    properties: {
-      name: 'bus stop',
-      type: 'bus_stop',
-      popupContent: 'Some popup!',
-    },
-    geometry: {
-      type: 'Point',
-      coordinates: [23.78190279, 53.65911062],
-    },
-  },
-  {
-    type: 'Feature',
-    properties: {
-      name: 'end point',
-      type: 'end',
-      popupContent: 'Some popup!',
-    },
-    geometry: {
-      type: 'Point',
-      coordinates: [23.78194571, 53.65791534],
-    },
-  },
-  {
-    type: 'Feature',
-    properties: {
-      name: 'Lines',
-    },
-    geometry: {
-      type: 'LineString',
-      coordinates: [
-        [23.79417658, 53.6729683],
-        [23.78851175, 53.66706981],
-        [23.78439188, 53.66429825],
-        [23.78190279, 53.65911062],
-        [23.78194571, 53.65791534],
-      ],
-    },
-  },
-];
-const startIcon = L.icon.mapkey(
-  {
-    icon: 'avatar',
-    color: '#1B8717',
-    background: 'white',
-    size: 35,
-  });
-const endIcon = L.icon.mapkey(
-  {
-    icon: 'golf',
-    color: 'red',
-    background: 'white',
-    size: 35,
-  });
-const busIcon = L.icon.mapkey(
-  {
-    icon: 'bus',
-    color: 'white',
-    background: '#221961',
-    size: 30,
-  });
 
 let fromFlag = false;
 let requestFlag = false;
@@ -118,9 +24,16 @@ let map;
 
 fromBlock.classList.add('animated', 'bounceInLeft');
 fromBlock.style.display = 'none';
+outBlock.classList.add('animated', 'zoomIn');
+outBlock.style.display = 'none';
+submitButton.classList.add('animated', 'fadeInRight');
+submitButton.style.display = 'none';
 
 function createRequest(data) {
-  L.geoJson(GeoJSON, {
+  submitButton.style.display = 'none';
+  outBlock.style.display = 'block';
+
+  L.geoJson(GeoJson, {
     pointToLayer: (feature, latlng) => {
       switch (feature.properties.type) {
         case 'start': return L.marker(latlng, { icon: startIcon });
@@ -212,18 +125,18 @@ function checkValues() {
 
   if (fromFlag) {
     if (fromText.length !== 0 && toText.length !== 0) {
-      $('#submitButton').removeAttr('disabled');
+      submitButton.style.display = 'block';
       checkFlag = false;
     } else {
-      $('#submitButton').attr('disabled', 'disabled');
+      submitButton.style.display = 'none';
       checkFlag = true;
     }
   } else {
     if (toText.length !== 0) {
-      $('#submitButton').removeAttr('disabled');
+      submitButton.style.display = 'block';
       checkFlag = false;
     } else {
-      $('#submitButton').attr('disabled', 'disabled');
+      submitButton.style.display = 'none';
       checkFlag = true;
     }
   }
