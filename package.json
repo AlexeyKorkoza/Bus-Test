@@ -4,9 +4,10 @@
   "description": "Client part of the application. In this app you can find way to get to any point in the shortest time",
   "main": "index.js",
   "scripts": {
+    "csslint": "csslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "precommit": "concurrently \"npm run lint\" \"npm run htmllint\"",
+    "precommit": "concurrently \"npm run lint\" \"npm run htmllint\" \"npm run csslint\"",
     "htmllint": "htmllint .html",
     "start": "webpack-dev-server"
   },
