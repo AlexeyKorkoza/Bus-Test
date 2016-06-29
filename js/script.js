@@ -3,10 +3,13 @@ import { startIcon, endIcon, busIcon } from '../models/Icons';
 
 const fromBlock = document.getElementById('fromBlock');
 const submitButton = document.getElementById('submitButton');
-const from = document.getElementById('form');
+const watchOnMapButton = document.getElementById('watchOnMapButton');
+const watchOnFormButton = document.getElementById('watchOnFormButton');
+const from = document.getElementById('from');
 const to = document.getElementById('to');
-const iconDown = document.getElementById('on-icon-down-big');
-const outBlock = document.getElementById('out-container');
+const formContainer = document.getElementById('form');
+const mapContainer = document.getElementById('map');
+const outContainer = document.getElementById('out');
 const errors = {
   1: 'Permission denied',
   2: 'Position unavailable',
@@ -24,19 +27,37 @@ let map;
 
 fromBlock.classList.add('animated', 'bounceInLeft');
 fromBlock.style.display = 'none';
-outBlock.classList.add('animated', 'zoomIn');
-outBlock.style.display = 'none';
+outContainer.classList.add('animated', 'zoomIn');
+outContainer.style.display = 'none';
 submitButton.classList.add('animated', 'fadeInRight');
-submitButton.style.display = 'none';
+
+function initMap() {
+  map = L.map('map-body', {
+    scrollWheelZoom: true }
+  ).setView([53.68583, 23.83812], 13);
+
+  L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors | Tiles Courtesy of <a href="http://www.mapquest.com/" title="MapQuest" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png" width="16" height="16">',
+    subdomains: ['otile1', 'otile2', 'otile3', 'otile4'] }
+  ).addTo(map);
+}
 
 function createRequest(data) {
   submitButton.style.display = 'none';
-  outBlock.style.display = 'block';
+  outContainer.style.display = 'block';
+
+  if (map === undefined) {
+    initMap();
+  }
 
   L.geoJson(GeoJson, {
     pointToLayer: (feature, latlng) => {
       switch (feature.properties.type) {
-        case 'start': return L.marker(latlng, { icon: startIcon });
+        case 'start':
+          {
+            map.setView(latlng, 14);
+            return L.marker(latlng, { icon: startIcon });
+          }
         case 'end': return L.marker(latlng, { icon: endIcon });
         case 'bus_stop': return L.marker(latlng, { icon: busIcon });
         default: return L.marker(latlng);
@@ -53,15 +74,9 @@ function createRequest(data) {
   console.log(data);
 }
 
-function initMap() {
-  map = L.map('map-body', {
-    scrollWheelZoom: true }
-  ).setView([53.68583, 23.83812], 13);
-
-  L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors | Tiles Courtesy of <a href="http://www.mapquest.com/" title="MapQuest" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png" width="16" height="16">',
-    subdomains: ['otile1', 'otile2', 'otile3', 'otile4'] }
-  ).addTo(map);
+function showAlert() {
+  $('#alertMessage').show('slow');
+  setTimeout(() => { $('#alertMessage').hide('slow'); }, 2000);
 }
 
 function onSuccessCallback(position) {
@@ -69,20 +84,20 @@ function onSuccessCallback(position) {
   longitude = position.coords.longitude;
   accuracy = position.coords.accuracy;
 
-  json = {
-    location: {
-      lat: latitude,
-      lon: longitude,
-      accuracy,
-    },
-    to: $('#to').val(),
-  };
-  if (!map) {
-    initMap();
-  }
-  createRequest(json);
+  if (checkFlag) {
+    json = {
+      location: {
+        lat: latitude,
+        lon: longitude,
+        accuracy,
+      },
+      to: $('#to').val(),
+    };
 
-  iconDown.style.display = 'block';
+    createRequest(json);
+  } else {
+    showAlert();
+  }
 }
 
 function resizeSubmitButton() {
@@ -102,6 +117,7 @@ function resizeSubmitButton() {
 function onErrorCallback(error) {
   console.log(errors[error.code]);
   fromBlock.style.display = 'block';
+  fromBlock.classList.remove('animated');
   resizeSubmitButton();
 
   fromFlag = true;
@@ -126,18 +142,16 @@ function checkValues() {
   if (fromFlag) {
     if (fromText.length !== 0 && toText.length !== 0) {
       submitButton.style.display = 'block';
-      checkFlag = false;
-    } else {
-      submitButton.style.display = 'none';
       checkFlag = true;
+    } else {
+      checkFlag = false;
     }
   } else {
     if (toText.length !== 0) {
       submitButton.style.display = 'block';
-      checkFlag = false;
-    } else {
-      submitButton.style.display = 'none';
       checkFlag = true;
+    } else {
+      checkFlag = false;
     }
   }
 }
@@ -146,22 +160,32 @@ function searchRoutes() {
   checkValues();
   geoFindMe();
 
-  if (requestFlag && !checkFlag) {
+  if (requestFlag && checkFlag) {
     json = {
       from: $('#from').val(),
       to: $('#to').val(),
     };
     console.log(json);
-
-    if (!map) {
-      initMap();
-    }
-
     createRequest(json);
-    iconDown.style.display = 'block';
   }
+
+  if (!checkFlag) {
+    showAlert();
+  }
+}
+
+function watchMapContainer() {
+  formContainer.style.display = 'none';
+  mapContainer.style.display = 'block';
+}
+
+function watchFormContainer() {
+  formContainer.style.display = 'block';
+  mapContainer.style.display = 'none';
 }
 
 from.onkeyup = checkValues;
 to.onkeyup = checkValues;
 submitButton.onclick = searchRoutes;
+watchOnMapButton.onclick = watchMapContainer;
+watchOnFormButton.onclick = watchFormContainer;

@@ -18,6 +18,10 @@ body{ overflow: hidden; }
 	width: 100%;
 }
 
+#alertMessage {
+	display: none;
+}
+
 .panel{
 	height: 98%;
 	min-width: 100%;
