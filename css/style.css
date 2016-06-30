@@ -13,9 +13,13 @@ body{ overflow: hidden; }
 }
 
 #map-body{
-	margin-top: 5%;
+
 	height: 85%;
 	width: 100%;
+}
+
+#alertMessage {
+	display: none;
 }
 
 .panel{

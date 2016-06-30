@@ -14,6 +14,8 @@
   <link rel="stylesheet" type="text/css" href="css/media.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"/>
   <link rel="stylesheet" type="text/css" href="node_modules/leaflet-mapkey-icon/dist/MapkeyIcons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!--Fontello-->
   <link rel="stylesheet" href="css/animation.css" type="text/css"/>
   <link rel="stylesheet" href="css/fontello.css" type="text/css"/>
@@ -32,6 +34,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/placeholders.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
   <script src="node_modules/leaflet-mapkey-icon/dist/L.Icon.Mapkey.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+          integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+          crossorigin="anonymous"></script>
 </head>
 <body>
 <a name="form"></a>
@@ -40,6 +45,9 @@
 <section id="main">
   <div id="form" class="panel">
     <div class="header-container animated fadeInDown">
+      <div id="alertMessage">
+        Пожалуйста, заполните все поля
+      </div>
       <div id="fromBlock" class="col_name_of_street">
         <i class="icon-location"></i>
         <input id="from" type="text" placeholder="Откуда?" class="name_of_street effect-8"/>
@@ -55,29 +63,32 @@
           </span>
       </div>
       <div id="button">
-        <button type="button" id="submitButton" disabled class="search">Поиск маршрута</button>
-        <a href="#out" id="on-icon-down-big" class="bottom"><i class="icon-down-big"></i></a>
+        <button type="button" id="submitButton" class="search">Поиск маршрута</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="panel panel-primary" id="out">
+        <h1>
+          some instructions
+        </h1>
+        <button type="button" id="watchOnMapButton">Посмотреть на карте</button>
       </div>
     </div>
   </div>
 
-
-  <div id="out" class="panel">
-    <a href="#form" class="top"><i class="icon-up-big"></i></a>
-    <a href="#map" class="bottom"><i class="icon-down-big"></i></a>
-    <p>
-     Go to M bus stop. N bus will arrive within 5 minutes
-    </p>
-  </div>
-
-
   <div id="map" class="panel">
-    <a href="#out" class="top"><i class="icon-up-big"></i></a>
-    <div id="map-body">
 
+    <div class="panel panel-default" >
+      <div class="panel-heading">
+        Какая-то инофрмация о маршруте
+        <button type="button" id="watchOnFormButton">Закрыть карту</button>
+      </div>
+      <div class="panel-body" id="map-body">
+
+      </div>
     </div>
   </div>
 </section>
-<script src="js/script.js"></script>
+<script src="/dist/bundle.js" charset="utf-8"></script>
 </body>
 </html>
