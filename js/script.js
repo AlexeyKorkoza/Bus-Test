@@ -25,7 +25,6 @@ let accuracy;
 let json;
 let map;
 
-fromBlock.classList.add('animated', 'bounceInLeft');
 fromBlock.style.display = 'none';
 outContainer.classList.add('animated', 'zoomIn');
 outContainer.style.display = 'none';
@@ -116,6 +115,7 @@ function resizeSubmitButton() {
 
 function onErrorCallback(error) {
   console.log(errors[error.code]);
+  fromBlock.classList.add('animated', 'bounceInLeft');
   fromBlock.style.display = 'block';
   fromBlock.classList.remove('animated');
   resizeSubmitButton();
@@ -160,17 +160,16 @@ function searchRoutes() {
   checkValues();
   geoFindMe();
 
-  if (requestFlag && checkFlag) {
-    json = {
-      from: $('#from').val(),
-      to: $('#to').val(),
-    };
-    console.log(json);
-    createRequest(json);
-  }
-
-  if (!checkFlag) {
-    showAlert();
+  if (requestFlag) {
+    if (checkFlag) {
+      json = {
+        from: $('#from').val(),
+        to: $('#to').val(),
+      };
+      createRequest(json);
+    } else {
+      showAlert();
+    }
   }
 }
 
@@ -184,8 +183,8 @@ function watchFormContainer() {
   mapContainer.style.display = 'none';
 }
 
-from.onkeyup = checkValues;
-to.onkeyup = checkValues;
+from.onkeydown = checkValues;
+to.onkeydown = checkValues;
 submitButton.onclick = searchRoutes;
 watchOnMapButton.onclick = watchMapContainer;
 watchOnFormButton.onclick = watchFormContainer;
