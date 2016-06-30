@@ -178,22 +178,3 @@ body {
 
 /* out map css
 =========================== */
-
-/*
- *Scrolling
- */
-
-a[ name= "form" ]:target ~ #main div.panel {
-  -webkit-transform: translateY(0px);
-  transform: translateY(0px);
-}
-
-a[ name= "out" ]:target ~ #main div.panel {
-  -webkit-transform: translateY(-103%);
-  transform: translateY(-103%);
-}
-
-a[ name= "map" ]:target ~ #main div.panel {
-  -webkit-transform: translateY(-203%);
-  transform: translateY(-203%);
-}

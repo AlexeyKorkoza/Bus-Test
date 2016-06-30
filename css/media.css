@@ -42,21 +42,6 @@
   .icon-location {
     top: 15px;
   }
-
-  a[ name= "form" ]:target ~ #main div.panel {
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-
-  a[ name= "out" ]:target ~ #main div.panel {
-    -webkit-transform: translateY(-108%);
-    transform: translateY(-108%);
-  }
-
-  a[ name= "map" ]:target ~ #main div.panel {
-    -webkit-transform: translateY(-208%);
-    transform: translateY(-208%);
-  }
 }
 
 @media (min-width: 768px) and (max-width: 980px) {
