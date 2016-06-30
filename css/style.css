@@ -44,6 +44,7 @@ body {
 
 .top:hover, .bottom:hover {
   color: #55ff00;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -104,6 +105,7 @@ body {
   width: 0;
   height: 2px;
   background-color: #3399FF;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -123,6 +125,7 @@ body {
   width: 2px;
   height: 0;
   background-color: #3399FF;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -136,12 +139,14 @@ body {
 .effect-8:focus ~ .focus-border:before,
 .effect-8:focus ~ .focus-border:after {
   width: 100%;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .effect-8:focus ~ .focus-border i:before,
 .effect-8:focus ~ .focus-border i:after {
   height: 100%;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
