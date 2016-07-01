@@ -47,34 +47,6 @@ body {
   padding: 5px 0;
 }
 
-/* icons start css
-=========================== */
-.top, .bottom {
-  text-decoration: none;
-  font-size: 20pt;
-  color: #0000CD;
-  position: absolute;
-  left: 50%;
-}
-
-.top:hover, .bottom:hover {
-  color: #55ff00;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.top {
-  top: 0;
-}
-
-.bottom:first-of-type {
-  bottom: -70px;
-}
-
-.bottom:last-of-type {
-  bottom: 10px;
-}
-
 /* form start css
 =========================== */
 #form {
