@@ -137,10 +137,6 @@ body {
   margin: 0 auto;
 }
 
-.search:hover {
-  background: #555555;
-}
-
 #on-icon-down-big {
   top: 200px;
   display: none;

@@ -142,19 +142,23 @@ function checkValues() {
   if (fromFlag) {
     if (fromText.length !== 0 && toText.length !== 0) {
       submitButton.style.display = 'block';
+      submitButton.style.transitionDelay = '0.5s';
       submitButton.style.background = 'green';
       checkFlag = true;
     } else {
       checkFlag = false;
+      submitButton.style.transitionDelay = '0.5s';
       submitButton.style.background = 'red';
     }
   } else {
     if (toText.length !== 0) {
       submitButton.style.display = 'block';
+      submitButton.style.transitionDelay = '0.5s';
       submitButton.style.background = 'green';
       checkFlag = true;
     } else {
       checkFlag = false;
+      submitButton.style.transitionDelay = '0.5s';
       submitButton.style.background = 'red';
     }
   }
