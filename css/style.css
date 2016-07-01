@@ -14,11 +14,6 @@ body {
   position: relative;
 }
 
-#map-body {
-  height: 85%;
-  width: 100%;
-}
-
 #alertMessage {
   display: none;
 }
@@ -30,6 +25,26 @@ body {
   overflow-x: hidden;
   -webkit-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
+}
+
+/* button start css
+=========================== */
+.search,#watchOnMapButton,#watchOnFormButton{
+  width: 100%;
+  border: none;
+  text-align: center;
+  background: #0000CD;
+  border-radius: 5px;
+  padding: 11px 0;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+#watchOnMapButton,#watchOnFormButton{
+  padding: 5px 0;
 }
 
 /* icons start css
@@ -72,7 +87,7 @@ body {
   left: 10px;
 }
 
-.name_of_street, .search, .navigation li a {
+.name_of_street, .search, #watchOnMapButton, #watchOnFormButton, .navigation li a {
   font: 24px 'OpenSansLight';
 }
 
@@ -155,20 +170,6 @@ body {
   margin: 0 auto;
 }
 
-.search {
-  width: 100%;
-  border: none;
-  text-align: center;
-  background: #0000CD;
-  border-radius: 5px;
-  padding: 11px 0;
-  color: white;
-  margin-top: 10px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-}
-
 .search:hover {
   background: #555555;
 }
@@ -181,5 +182,19 @@ body {
 /* out start css
 =========================== */
 
+.container{
+  width: 98%;
+  margin: 20px auto 0 auto;
+}
+
+#watchOnFormButton{
+  margin-bottom: 5px;
+}
+
 /* out map css
 =========================== */
+
+#map-body {
+  height: 85%;
+  width: 100%;
+}

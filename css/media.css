@@ -1,5 +1,5 @@
 ﻿@media (min-width: 981px) {
-  .header-container {
+  .header-container,.container {
     margin: 0 auto;
     width: 940px;
   }
@@ -42,10 +42,14 @@
   .icon-location {
     top: 15px;
   }
+
+  .container{
+    clear: both;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 980px) {
-  .header-container {
+  .header-container,.container {
     margin: 0 auto;
     width: 728px;
   }
@@ -83,6 +87,10 @@
 
   .icon-location {
     top: 15px;
+  }
+
+  .container{
+    clear: both;
   }
 }
 
