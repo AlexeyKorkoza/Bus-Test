@@ -1,0 +1,3 @@
+--errors=duplicate-properties,empty-rules,shorthand,display-property-grouping,duplicate-background-images,import
+--warnings=zero-units
+--ignore=ids,vendor-prefix,universal-selector,unique-headings,important,box-sizing,outline-none,text-indent,font-faces,font-sizes,gradients,compatible-vendor-prefixes
