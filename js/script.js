@@ -142,16 +142,20 @@ function checkValues() {
   if (fromFlag) {
     if (fromText.length !== 0 && toText.length !== 0) {
       submitButton.style.display = 'block';
+      submitButton.style.background = 'green';
       checkFlag = true;
     } else {
       checkFlag = false;
+      submitButton.style.background = 'red';
     }
   } else {
     if (toText.length !== 0) {
       submitButton.style.display = 'block';
+      submitButton.style.background = 'green';
       checkFlag = true;
     } else {
       checkFlag = false;
+      submitButton.style.background = 'red';
     }
   }
 }
@@ -188,3 +192,4 @@ to.onkeydown = checkValues;
 submitButton.onclick = searchRoutes;
 watchOnMapButton.onclick = watchMapContainer;
 watchOnFormButton.onclick = watchFormContainer;
+submitButton.onkeydown = checkValues;

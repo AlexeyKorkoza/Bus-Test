@@ -38,6 +38,10 @@ body {
   padding: 5px 0;
 }
 
+.search{
+  background: red;
+}
+
 /* form start css
 =========================== */
 #form {
