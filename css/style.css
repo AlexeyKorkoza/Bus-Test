@@ -172,10 +172,6 @@ body {
   margin-bottom: 5px;
 }
 
-.accordion.active{
-
-}
-
 .accordion:after {
   content: '\02795';
   font-size: 13px;

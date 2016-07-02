@@ -199,12 +199,11 @@ watchOnFormButton.onclick = watchFormContainer;
 submitButton.onkeydown = checkValues;
 
 /* accordion */
-var acc = document.getElementsByClassName("accordion");
-var i;
-
+const acc = document.getElementsByClassName('accordion');
+let i = 0;
 for (i = 0; i < acc.length; i++) {
-  acc[i].onclick = function(){
-    this.classList.toggle("active");
-    this.nextElementSibling.classList.toggle("show");
-  }
+  acc[i].onclick = function () {
+    this.classList.toggle('active');
+    this.nextElementSibling.classList.toggle('show');
+  };
 }
