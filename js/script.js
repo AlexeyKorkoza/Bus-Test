@@ -183,7 +183,9 @@ function searchRoutes() {
 
 function watchMapContainer() {
   formContainer.style.display = 'none';
-  mapContainer.style.display = 'block';
+  $('#watchOnMapButton').click(() => {
+    $('#map').fadeIn(1000);
+  });
 }
 
 function watchFormContainer() {
