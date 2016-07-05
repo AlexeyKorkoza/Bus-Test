@@ -15,7 +15,11 @@ body {
 }
 
 #alertMessage {
+  font: 18px 'OpenSansLight';
+  color:#ff0000;
   display: none;
+  margin: 0 auto;
+  width: 98%;
 }
 
 /* button start css
