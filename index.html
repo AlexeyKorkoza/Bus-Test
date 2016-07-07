@@ -14,8 +14,7 @@
   <link rel="stylesheet" type="text/css" href="css/media.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"/>
   <link rel="stylesheet" type="text/css" href="node_modules/leaflet-mapkey-icon/dist/MapkeyIcons.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
   <!--Fontello-->
   <link rel="stylesheet" href="css/animation.css" type="text/css"/>
   <link rel="stylesheet" href="css/fontello.css" type="text/css"/>
@@ -32,17 +31,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/placeholders.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
   <script src="node_modules/leaflet-mapkey-icon/dist/L.Icon.Mapkey.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-          integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-          crossorigin="anonymous"></script>
 </head>
 <body>
-<a name="form"></a>
-<a name="out"></a>
-<a name="map"></a>
-<section id="main">
-  <div id="form" class="panel">
-    <div class="header-container animated fadeInDown">
+<section>
+  <div id="form">
+    <div class="header-container">
       <div id="alertMessage">
         Пожалуйста, заполните все поля
       </div>
@@ -65,32 +58,52 @@
       </div>
     </div>
     <div class="container">
-      <div class="panel panel-primary" id="out">
-        <h1>
-          Движение пешком. Нужно пройти 3.3 км до пункта назначение. Примерное время прибытие пешком 41 минута.
-          Движение на автобусе. От остановки Госпитать автобус №17 до остановки Лиможа.
-          Госпиталь -> Лиможа
-          19:30     -> 19:51 -> (иконка "не успеешь")        -> через 10 минут
-          19:40     -> 20:01 -> (иконка "придётся бежать")   -> через 20 минут
-          20:00     -> 20:21 -> (иконка "можно прогуляться") -> через 40 минут
-          20:30     -> 20:51 -> (иконка "можно поспать")     -> через 1 час 10 минут
-        </h1>
+      <div class="instructions" id="out">
+        <h1>Инструкция</h1>
+        <button class="accordion">Движение пешком</button>
+        <div class="panel">
+          Нужно пройти 3.3 км до пункта назначение.
+          Примерное время прибытия пешком 41 мин.
+        </div>
+        <button class="accordion">Движение на автобусе</button>
+        <div class="panel">
+          <h2>От остановки Госпитать автобус №17 до остановки Лиможа.</h2>
+          <table>
+            <caption>Госпиталь -> Лиможа</caption>
+            <tr>
+              <td>19:30</td>
+              <td>19:51</td>
+              <td>через 10 минут</td>
+            </tr>
+            <tr>
+              <td>19:40</td>
+              <td>20:01</td>
+              <td>через 20 минут</td>
+            </tr>
+            <tr>
+              <td>20:00</td>
+              <td>20:21</td>
+              <td>через 40 минут</td>
+            </tr>
+            <tr>
+              <td>20:30</td>
+              <td>20:51</td>
+              <td>через 1 час 10 минут</td>
+            </tr>
+          </table>
+        </div>
         <button type="button" id="watchOnMapButton">Посмотреть на карте</button>
       </div>
     </div>
   </div>
 
-  <div id="map" class="panel">
-
-    <div class="panel panel-default" >
-      <div class="panel-heading">
+  <div id="map">
+      <div class="information">
         Какая-то инофрмация о маршруте
         <button type="button" id="watchOnFormButton">Закрыть карту</button>
       </div>
-      <div class="panel-body" id="map-body">
-
+      <div id="map-body">
       </div>
-    </div>
   </div>
 </section>
 <script src="/dist/bundle.js" charset="utf-8"></script>

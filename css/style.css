@@ -8,56 +8,42 @@ body {
   overflow: hidden;
 }
 
-#form, #out, #map {
+#form, .container, #map {
   width: 100%;
   height: 100vh;
   position: relative;
 }
 
-#map-body {
-
-  height: 85%;
-  width: 100%;
-}
-
 #alertMessage {
+  font: 18px 'OpenSansLight';
+  color:#ff0000;
   display: none;
+  margin: 0 auto;
+  width: 98%;
 }
 
-.panel {
-  height: 98%;
-  min-width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-transition: all .6s ease-in-out;
-  transition: all .6s ease-in-out;
-}
-
-/* icons start css
+/* button start css
 =========================== */
-.top, .bottom {
-  text-decoration: none;
-  font-size: 20pt;
-  color: #0000CD;
-  position: absolute;
-  left: 50%;
+.search,#watchOnMapButton,#watchOnFormButton{
+  width: 100%;
+  border: none;
+  text-align: center;
+  background: #0000CD;
+  border-radius: 5px;
+  padding: 11px 0;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
-.top:hover, .bottom:hover {
-  color: #55ff00;
-  transition: all 0.3s ease;
+#watchOnMapButton,#watchOnFormButton{
+  padding: 5px 0;
 }
 
-.top {
-  top: 0;
-}
-
-.bottom:first-of-type {
-  bottom: -70px;
-}
-
-.bottom:last-of-type {
-  bottom: 10px;
+.search{
+  background: red;
 }
 
 /* form start css
@@ -72,7 +58,7 @@ body {
   left: 10px;
 }
 
-.name_of_street, .search, .navigation li a {
+.name_of_street, .search, #watchOnMapButton, #watchOnFormButton, .navigation li a {
   font: 24px 'OpenSansLight';
 }
 
@@ -105,6 +91,7 @@ body {
   width: 0;
   height: 2px;
   background-color: #3399FF;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -124,6 +111,7 @@ body {
   width: 2px;
   height: 0;
   background-color: #3399FF;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -137,37 +125,20 @@ body {
 .effect-8:focus ~ .focus-border:before,
 .effect-8:focus ~ .focus-border:after {
   width: 100%;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .effect-8:focus ~ .focus-border i:before,
 .effect-8:focus ~ .focus-border i:after {
   height: 100%;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 #button {
   width: 98%;
   margin: 0 auto;
-
-}
-
-.search {
-  width: 100%;
-  border: none;
-  text-align: center;
-  background: #0000CD;
-  border-radius: 5px;
-  padding: 11px 0;
-  color: white;
-  margin-top: 10px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-}
-
-.search:hover {
-  background: #555555;
 }
 
 #on-icon-down-big {
@@ -178,24 +149,68 @@ body {
 /* out start css
 =========================== */
 
+.container{
+  width: 98%;
+  margin: 80px auto 0 auto;
+}
+
+.instructions h1{
+  text-align: center;
+  font: 20px 'OpenSansLight';
+  margin-bottom: 5px;
+}
+
+.accordion {
+  background: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 10px 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  border-top:2px solid #0000cc;
+  margin-bottom: 5px;
+}
+
+.accordion:after {
+  content: '\02795';
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin:5px 0 0 5px;
+}
+
+.accordion.active:after {
+  content: "\2796";
+}
+
+.panel {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  opacity: 0;
+  background: #eee;
+}
+
+.panel.show {
+  opacity: 1;
+  max-height: 500px;
+}
+
+#watchOnFormButton{
+  margin-bottom: 5px;
+}
+
 /* out map css
 =========================== */
 
-/*
- *Scrolling
- */
-
-a[ name= "form" ]:target ~ #main div.panel {
-  -webkit-transform: translateY(0px);
-  transform: translateY(0px);
-}
-
-a[ name= "out" ]:target ~ #main div.panel {
-  -webkit-transform: translateY(-103%);
-  transform: translateY(-103%);
-}
-
-a[ name= "map" ]:target ~ #main div.panel {
-  -webkit-transform: translateY(-203%);
-  transform: translateY(-203%);
+#map-body {
+  height: 80%;
+  width: 100%;
 }

@@ -142,16 +142,24 @@ function checkValues() {
   if (fromFlag) {
     if (fromText.length !== 0 && toText.length !== 0) {
       submitButton.style.display = 'block';
+      submitButton.style.transitionDelay = '0.5s';
+      submitButton.style.background = 'green';
       checkFlag = true;
     } else {
       checkFlag = false;
+      submitButton.style.transitionDelay = '0.5s';
+      submitButton.style.background = 'red';
     }
   } else {
     if (toText.length !== 0) {
       submitButton.style.display = 'block';
+      submitButton.style.transitionDelay = '0.5s';
+      submitButton.style.background = 'green';
       checkFlag = true;
     } else {
       checkFlag = false;
+      submitButton.style.transitionDelay = '0.5s';
+      submitButton.style.background = 'red';
     }
   }
 }
@@ -175,7 +183,9 @@ function searchRoutes() {
 
 function watchMapContainer() {
   formContainer.style.display = 'none';
-  mapContainer.style.display = 'block';
+  $('#watchOnMapButton').click(() => {
+    $('#map').fadeIn(1000);
+  });
 }
 
 function watchFormContainer() {
@@ -188,3 +198,14 @@ to.onkeydown = checkValues;
 submitButton.onclick = searchRoutes;
 watchOnMapButton.onclick = watchMapContainer;
 watchOnFormButton.onclick = watchFormContainer;
+submitButton.onkeydown = checkValues;
+
+/* accordion */
+const acc = document.getElementsByClassName('accordion');
+let i = 0;
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function () {
+    this.classList.toggle('active');
+    this.nextElementSibling.classList.toggle('show');
+  };
+}

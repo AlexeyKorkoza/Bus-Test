@@ -1,26 +1,9 @@
 ﻿@media (min-width: 981px) {
-  .header-container {
+  .header-container,.container {
     margin: 0 auto;
     width: 940px;
   }
 
-  .top, .bottom {
-    left: 50%;
-    font-size: 40pt;
-  }
-
-  .bottom:last-of-type {
-    bottom: 20px;
-  }
-
-  .bottom:first-of-type {
-    bottom: -300px;
-  }
-
-  #form a {
-    top: 200px;
-  }
-
   .col_name_of_street {
     margin-top: 10px;
   }
@@ -43,39 +26,15 @@
     top: 15px;
   }
 
-  a[ name= "form" ]:target ~ #main div.panel {
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-
-  a[ name= "out" ]:target ~ #main div.panel {
-    -webkit-transform: translateY(-108%);
-    transform: translateY(-108%);
-  }
-
-  a[ name= "map" ]:target ~ #main div.panel {
-    -webkit-transform: translateY(-208%);
-    transform: translateY(-208%);
+  .container{
+    clear: both;
   }
 }
 
 @media (min-width: 768px) and (max-width: 980px) {
-  .header-container {
+  .header-container,.container {
     margin: 0 auto;
     width: 728px;
-  }
-
-  .top, .bottom {
-    left: 50%;
-    font-size: 30pt;
-  }
-
-  #form a {
-    top: 200px;
-  }
-
-  .bottom:last-of-type {
-    bottom: 200px;
   }
 
   .col_name_of_street {
@@ -98,50 +57,21 @@
 
   .icon-location {
     top: 15px;
+  }
+
+  .container{
+    clear: both;
   }
 }
 
 @media (min-width: 601px) and (max-width: 767px) {
 
-  .bottom:first-of-type {
-    bottom: -300px;
-  }
-
-  .bottom:last-of-type {
-    bottom: 120px;
-  }
-
-  #form a {
-    top: 200px;
-  }
 }
 
 @media (min-width: 481px) and (max-width: 600px) {
 
-  .bottom:first-of-type {
-    bottom: -100px;
-  }
-
-  .bottom:last-of-type {
-    bottom: 200px;
-  }
-
-  #form a {
-    top: 200px;
-  }
 }
 
 @media (min-width: 321px) and (max-width: 480px) {
 
-  .bottom:first-of-type {
-    bottom: -70px;
-  }
-
-  .bottom:last-of-type {
-    bottom: 100px;
-  }
-
-  #form a {
-    top: 200px;
-  }
 }
