@@ -109,6 +109,7 @@ function resizeSubmitButton() {
     submitButton.style.marginTop = '10px';
     submitButton.style.marginLeft = '0px';
     document.getElementById('button').style.width = '97.5%';
+    outContainer.style.width = '97.5%';
     fromBlock.style.marginRight = '5px';
   }
 }
