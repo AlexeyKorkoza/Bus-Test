@@ -215,7 +215,8 @@ body {
 ul li{
   list-style-type: none;
   display: block;
-  color:#ffb31a;
+  color:#3333cc;
+  font-weight: bold;
 }
 
 table {
@@ -225,7 +226,7 @@ table {
 }
 
 th {
-  background: #ffb31a;
+  background: #3333cc;
   color: white;
   text-shadow: 0 1px 1px #2D2020;
   padding: 10px;
@@ -248,7 +249,8 @@ th:last-of-type {
 
 td {
   padding: 10px 0;
-  background: #F8E391;
+  background: #3333cc;
+  color: white;
 }
 
 tr:last-of-type td:first-of-type {
