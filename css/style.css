@@ -208,8 +208,14 @@ body {
   margin-bottom: 5px;
 }
 
-.instructions h2, table {
+.instructions h2, table, ul li {
   font: 15px 'OpenSansLight';
+}
+
+ul li{
+  list-style-type: none;
+  display: block;
+  color:#ffb31a;
 }
 
 table {
