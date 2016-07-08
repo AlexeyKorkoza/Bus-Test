@@ -152,13 +152,13 @@ body {
 
 .container {
   width: 98%;
-  margin: 80px auto 0 auto;
+  margin:0 auto;
+  padding-top:25px;
 }
 
 .instructions h1 {
   text-align: center;
   font: 20px 'OpenSansLight';
-  margin-bottom: 5px;
 }
 
 .accordion {
