@@ -16,7 +16,7 @@ body {
 
 #alertMessage {
   font: 18px 'OpenSansLight';
-  color:#ff0000;
+  color: #ff0000;
   display: none;
   margin: 0 auto;
   width: 98%;
@@ -24,7 +24,7 @@ body {
 
 /* button start css
 =========================== */
-.search,#watchOnMapButton,#watchOnFormButton{
+.search, #watchOnMapButton, #watchOnFormButton {
   width: 100%;
   border: none;
   text-align: center;
@@ -38,11 +38,11 @@ body {
   transition-duration: 0.5s;
 }
 
-#watchOnMapButton,#watchOnFormButton{
+#watchOnMapButton, #watchOnFormButton {
   padding: 5px 0;
 }
 
-.search{
+.search {
   background: red;
 }
 
@@ -50,6 +50,7 @@ body {
 =========================== */
 #form {
   padding-top: 5%;
+  overflow-y: scroll;
 }
 
 .icon-location {
@@ -149,12 +150,12 @@ body {
 /* out start css
 =========================== */
 
-.container{
+.container {
   width: 98%;
   margin: 80px auto 0 auto;
 }
 
-.instructions h1{
+.instructions h1 {
   text-align: center;
   font: 20px 'OpenSansLight';
   margin-bottom: 5px;
@@ -172,7 +173,7 @@ body {
   font-size: 15px;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
-  border-top:2px solid #0000cc;
+  border-top: 2px solid #0000cc;
   margin-bottom: 5px;
 }
 
@@ -181,7 +182,7 @@ body {
   font-size: 13px;
   color: #777;
   float: right;
-  margin:5px 0 0 5px;
+  margin: 5px 0 0 5px;
 }
 
 .accordion.active:after {
@@ -203,8 +204,66 @@ body {
   max-height: 500px;
 }
 
-#watchOnFormButton{
+#watchOnFormButton {
   margin-bottom: 5px;
+}
+
+.instructions h2, table {
+  font: 15px 'OpenSansLight';
+}
+
+table {
+  border-radius: 10px;
+  border-spacing: 0;
+  text-align: center;
+  width:100%;
+}
+
+th {
+  background: #ffb31a;
+  color: white;
+  text-shadow: 0 1px 1px #2D2020;
+  padding: 10px 20px;
+}
+
+th, td {
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+}
+
+th:first-of-type, td:first-of-type {
+  text-align: left;
+}
+
+th:first-of-type {
+  border-top-left-radius: 10px;
+}
+
+th:last-of-type {
+  border-top-right-radius: 10px;
+  border-right: none;
+}
+
+td {
+  padding: 10px 20px;
+  background: #F8E391;
+}
+
+tr:last-of-type td:first-of-type {
+  border-radius: 0 0 0 10px;
+}
+
+tr:last-of-type td:last-of-type {
+  border-radius: 0 0 10px 0;
+}
+
+tr td:last-of-type {
+  border-right: none;
+}
+
+tr:last-of-type td {
+  border-bottom: none;
 }
 
 /* out map css
